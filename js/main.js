@@ -1,0 +1,151 @@
+/* Base functionality for responsive navigation, animations, and interactivity */
+document.addEventListener('DOMContentLoaded', function() {
+  // Loader removal
+  const loader = document.getElementById('page-loader');
+  if (loader) {
+    window.addEventListener('load', function() {
+      loader.style.display = 'none';
+    });
+  }
+
+  // Navigation scroll effect
+  const nav = document.querySelector('nav');
+  if (nav) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  }
+
+  // Mobile menu functionality
+  const createMobileMenu = () => {
+    const nav = document.querySelector('nav');
+    if (!nav) return;
+    
+    // Check if mobile menu already exists
+    if (document.querySelector('.mobile-menu-icon')) return;
+    
+    // Create mobile menu icon
+    const mobileMenuIcon = document.createElement('div');
+    mobileMenuIcon.className = 'mobile-menu-icon';
+    mobileMenuIcon.innerHTML = '☰';
+    mobileMenuIcon.style.cssText = `
+      position: absolute; top: 1rem; right: 1rem; z-index: 101;
+      font-size: 1.5rem; color: var(--white); cursor: pointer;
+      display: none;
+    `;
+    
+    // Insert before nav-links
+    const navLinks = nav.querySelector('.nav-links');
+    if (navLinks) {
+      nav.insertBefore(mobileMenuIcon, navLinks);
+    }
+    
+    // Toggle menu on click
+    mobileMenuIcon.addEventListener('click', function() {
+      const navLinks = nav.querySelector('.nav-links');
+      if (navLinks) {
+        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+      }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+      const navLinks = nav.querySelector('.nav-links');
+      if (mobileMenuIcon && navLinks && !mobileMenuIcon.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.style.display = 'none';
+      }
+    });
+    
+    // Set up media query listener
+    const mediaQuery = window.matchMedia('(max-width: 900px)');
+    const toggleMobileMenu = () => {
+      const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+      const navLinks = nav.querySelector('.nav-links');
+      if (mobileMenuIcon && navLinks) {
+        if (mediaQuery.matches) {
+          mobileMenuIcon.style.display = 'block';
+        } else {
+          mobileMenuIcon.style.display = 'none';
+          if (navLinks.style.display === 'flex') {
+            navLinks.style.display = 'flex'; // ensure it's displayed
+          }
+        }
+      }
+    };
+    
+    mediaQuery.addEventListener('change', toggleMobileMenu);
+    toggleMobileMenu(); // Initial check
+  };
+  
+  createMobileMenu();
+
+  // Smooth scrolling for internal links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Add active class to nav links when scrolled to section
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('section[id]');
+  
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        const navLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+        if (navLink) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          navLink.classList.add('active');
+        }
+      }
+    });
+  }, { threshold: 0.6 });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+
+  // Back to top button behavior
+  const backToTopBtn = document.getElementById('backToTop');
+  if (backToTopBtn) {
+    // Show button after scrolling down 300px
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+    
+    // Scroll to top when clicked
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+});
+
+/* Initialize mobile menu on load */
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu logic is already bootstrapped above
+  });
+} else {
+  // Mobile menu logic is already bootstrapped above
+}

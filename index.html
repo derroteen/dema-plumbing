@@ -1,512 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic SEO -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dema Plumbing Enterprise</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --black: #0a0a0a;
-      --dark: #111418;
-      --card: #161b22;
-      --orange: #f47c20;
-      --orange-light: #ff9a45;
-      --white: #f5f0eb;
-      --grey: #8a8f98;
-      --border: rgba(244,124,32,0.2);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: 'Barlow', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.2rem 6%;
-      background: rgba(10,10,10,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
-      color: var(--white);
-    }
-    .logo span { color: var(--orange); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      color: var(--grey); text-decoration: none;
-      font-weight: 500; font-size: 0.9rem; letter-spacing: 1px;
-      text-transform: uppercase; transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--orange); }
-    .nav-cta {
-      background: var(--orange); color: var(--black);
-      border: none; padding: 0.6rem 1.4rem;
-      font-family: 'Barlow', sans-serif; font-weight: 700;
-      font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase;
-      cursor: pointer; transition: background 0.2s;
-    }
-    .nav-cta:hover { background: var(--orange-light); }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: grid; grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 0 6%;
-      padding-top: 80px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; top: 0; right: 0;
-      width: 55%; height: 100%;
-      background: linear-gradient(135deg, #1a1f2b 0%, #0d1117 100%);
-      clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
-      z-index: 0;
-    }
-    .hero-pipe-bg {
-      position: absolute; right: 4%; top: 50%; transform: translateY(-50%);
-      font-size: 22rem; opacity: 0.04; z-index: 0;
-      font-family: 'Bebas Neue', sans-serif; color: var(--orange);
-      letter-spacing: -10px; line-height: 1;
-      pointer-events: none;
-    }
-
-    .hero-text { position: relative; z-index: 1; animation: fadeUp 0.9s ease both; }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(244,124,32,0.15);
-      border: 1px solid var(--orange);
-      color: var(--orange);
-      padding: 0.3rem 1rem;
-      font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 2px; text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-    .hero h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3.5rem, 7vw, 6.5rem);
-      line-height: 0.95;
-      letter-spacing: 2px;
-      color: var(--white);
-      margin-bottom: 1.5rem;
-    }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--orange);
-      display: block;
-    }
-    .hero p {
-      font-size: 1.05rem;
-      color: var(--grey);
-      line-height: 1.7;
-      max-width: 460px;
-      margin-bottom: 2.5rem;
-    }
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--orange); color: var(--black);
-      padding: 0.9rem 2.2rem; font-weight: 700;
-      font-size: 0.9rem; letter-spacing: 1.5px;
-      text-transform: uppercase; border: none;
-      cursor: pointer; transition: all 0.2s;
-      text-decoration: none; display: inline-block;
-    }
-    .btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); }
-    .btn-outline {
-      background: transparent; color: var(--white);
-      padding: 0.9rem 2.2rem; font-weight: 700;
-      font-size: 0.9rem; letter-spacing: 1.5px;
-      text-transform: uppercase;
-      border: 1px solid rgba(245,240,235,0.3);
-      cursor: pointer; transition: all 0.2s;
-      text-decoration: none; display: inline-block;
-    }
-    .btn-outline:hover { border-color: var(--orange); color: var(--orange); }
-
-    .hero-visual {
-      position: relative; z-index: 1;
-      display: flex; flex-direction: column; align-items: center;
-      animation: fadeUp 0.9s 0.2s ease both;
-    }
-    .hero-icon-wrap {
-      width: 320px; height: 320px;
-      border: 2px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      position: relative;
-    }
-    .hero-icon-wrap::before {
-      content: '';
-      position: absolute; inset: -10px;
-      border: 1px solid rgba(244,124,32,0.08);
-    }
-    .hero-icon-wrap::after {
-      content: '';
-      position: absolute; top: 12px; right: 12px;
-      width: 20px; height: 20px;
-      background: var(--orange);
-    }
-    .big-icon {
-      font-size: 9rem;
-      filter: drop-shadow(0 0 40px rgba(244,124,32,0.4));
-      animation: pulse 3s ease-in-out infinite;
-    }
-    .hero-stats {
-      display: flex; gap: 2rem; margin-top: 2rem;
-    }
-    .stat { text-align: center; }
-    .stat-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.2rem; color: var(--orange); line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.72rem; color: var(--grey);
-      letter-spacing: 1.5px; text-transform: uppercase;
-      margin-top: 0.2rem;
-    }
-
-    /* ── TICKER ── */
-    .ticker {
-      background: var(--orange); padding: 0.8rem 0;
-      overflow: hidden; white-space: nowrap;
-    }
-    .ticker-inner {
-      display: inline-flex; gap: 3rem;
-      animation: ticker 18s linear infinite;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1rem; letter-spacing: 3px; color: var(--black);
-    }
-    .ticker-inner span { flex-shrink: 0; }
-    .ticker-dot { color: rgba(0,0,0,0.4); margin: 0 0.5rem; }
-
-    /* ── SERVICES ── */
-    section { padding: 6rem 6%; }
-
-    .section-label {
-      display: flex; align-items: center; gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    .section-label span {
-      font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 3px; text-transform: uppercase;
-      color: var(--orange);
-    }
-    .section-label::before {
-      content: '';
-      display: block; width: 40px; height: 2px;
-      background: var(--orange);
-    }
-    .section-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      letter-spacing: 2px; line-height: 1;
-      margin-bottom: 1rem;
-    }
-    .section-sub {
-      color: var(--grey); font-size: 1rem;
-      line-height: 1.7; max-width: 500px;
-      margin-bottom: 3.5rem;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 1.5px;
-      background: rgba(244,124,32,0.08);
-      border: 1px solid var(--border);
-    }
-    .service-card {
-      background: var(--dark);
-      padding: 2.5rem 2rem;
-      transition: background 0.25s;
-      cursor: default;
-      position: relative;
-      overflow: hidden;
-    }
-    .service-card::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0;
-      width: 0; height: 3px;
-      background: var(--orange);
-      transition: width 0.35s ease;
-    }
-    .service-card:hover { background: #1a1f2b; }
-    .service-card:hover::after { width: 100%; }
-    .service-icon { font-size: 2.5rem; margin-bottom: 1.2rem; }
-    .service-card h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.5rem; letter-spacing: 1.5px;
-      color: var(--white); margin-bottom: 0.7rem;
-    }
-    .service-card p { color: var(--grey); font-size: 0.9rem; line-height: 1.65; }
-
-    /* ── WHY US ── */
-    .why-section {
-      background: var(--dark);
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 5rem; align-items: center;
-    }
-    .why-list { display: flex; flex-direction: column; gap: 1.5rem; }
-    .why-item { display: flex; gap: 1.2rem; align-items: flex-start; }
-    .why-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.5rem; color: var(--border);
-      line-height: 1; flex-shrink: 0; min-width: 48px;
-      transition: color 0.2s;
-    }
-    .why-item:hover .why-num { color: var(--orange); }
-    .why-item h4 {
-      font-weight: 700; font-size: 1rem;
-      letter-spacing: 0.5px; margin-bottom: 0.4rem;
-    }
-    .why-item p { color: var(--grey); font-size: 0.88rem; line-height: 1.6; }
-    .why-visual {
-      position: relative;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .why-box {
-      width: 100%; aspect-ratio: 1;
-      max-width: 380px;
-      background: linear-gradient(135deg, #1a1f2b, #0d1117);
-      border: 1px solid var(--border);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 1rem; position: relative;
-    }
-    .why-box::before {
-      content: '';
-      position: absolute; top: -1px; left: 30px; right: 30px;
-      height: 3px; background: var(--orange);
-    }
-    .why-box-icon { font-size: 5rem; }
-    .why-box h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem; letter-spacing: 2px;
-      text-align: center; padding: 0 2rem;
-    }
-    .why-box p { color: var(--grey); font-size: 0.85rem; text-align: center; padding: 0 2rem; }
-
-    /* ── PROCESS ── */
-    .process-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 0; position: relative;
-    }
-    .process-grid::before {
-      content: '';
-      position: absolute; top: 2.5rem; left: 12.5%;
-      right: 12.5%; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--orange), transparent);
-    }
-    .process-step { padding: 0 1.5rem; text-align: center; }
-    .step-circle {
-      width: 5rem; height: 5rem;
-      border: 2px solid var(--orange);
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.5rem;
-      position: relative; background: var(--black);
-    }
-    .step-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.8rem; color: var(--orange);
-    }
-    .process-step h4 {
-      font-weight: 700; margin-bottom: 0.5rem;
-      font-size: 1rem; letter-spacing: 0.5px;
-    }
-    .process-step p { color: var(--grey); font-size: 0.85rem; line-height: 1.6; }
-
-    /* ── TESTIMONIALS ── */
-    .testimonials-bg { background: var(--dark); }
-    .testimonials-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .testimonial {
-      background: var(--black);
-      border: 1px solid var(--border);
-      padding: 2rem;
-      position: relative;
-    }
-    .testimonial::before {
-      content: '"';
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 5rem; color: var(--orange);
-      opacity: 0.2;
-      position: absolute; top: 0.5rem; right: 1.5rem;
-      line-height: 1;
-    }
-    .stars { color: var(--orange); font-size: 1rem; margin-bottom: 1rem; }
-    .testimonial p { color: #c0c4cc; font-size: 0.92rem; line-height: 1.7; margin-bottom: 1.5rem; }
-    .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
-    .author-avatar {
-      width: 42px; height: 42px;
-      background: linear-gradient(135deg, var(--orange), #c05a0a);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 1rem; color: var(--black);
-      flex-shrink: 0;
-    }
-    .author-name { font-weight: 700; font-size: 0.9rem; }
-    .author-loc { font-size: 0.78rem; color: var(--grey); }
-
-    /* ── CTA ── */
-    .cta-section {
-      background: var(--orange);
-      display: grid; grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 3rem;
-    }
-    .cta-section h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      letter-spacing: 2px; color: var(--black);
-    }
-    .cta-section p { color: rgba(0,0,0,0.65); font-size: 1rem; margin-top: 0.5rem; }
-    .btn-dark {
-      background: var(--black); color: var(--white);
-      padding: 1.1rem 2.5rem; font-weight: 700;
-      font-size: 0.9rem; letter-spacing: 1.5px;
-      text-transform: uppercase; border: none;
-      cursor: pointer; transition: all 0.2s;
-      white-space: nowrap; text-decoration: none;
-      display: inline-block;
-    }
-    .btn-dark:hover { background: var(--dark); transform: translateY(-2px); }
-
-    /* ── CONTACT ── */
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
-    }
-    .contact-info { display: flex; flex-direction: column; gap: 2rem; }
-    .contact-item { display: flex; gap: 1.2rem; align-items: flex-start; }
-    .contact-icon {
-      width: 48px; height: 48px; background: rgba(244,124,32,0.12);
-      border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem; flex-shrink: 0;
-    }
-    .contact-item h4 { font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.3rem; }
-    .contact-item p { color: var(--grey); font-size: 0.9rem; line-height: 1.6; }
-
-    .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-    .form-group label {
-      font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 2px; text-transform: uppercase; color: var(--grey);
-    }
-    .form-group input, .form-group textarea, .form-group select {
-      background: var(--card); border: 1px solid rgba(255,255,255,0.08);
-      color: var(--white); padding: 0.85rem 1rem;
-      font-family: 'Barlow', sans-serif; font-size: 0.95rem;
-      transition: border-color 0.2s; outline: none;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus { border-color: var(--orange); }
-    .form-group textarea { resize: vertical; min-height: 120px; }
-    .form-group select option { background: var(--dark); }
-    .form-submit {
-      background: var(--orange); color: var(--black);
-      padding: 1rem; font-weight: 700;
-      font-size: 0.9rem; letter-spacing: 1.5px;
-      text-transform: uppercase; border: none;
-      cursor: pointer; transition: all 0.2s;
-    }
-    .form-submit:hover { background: var(--orange-light); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #060608;
-      padding: 3rem 6%;
-      border-top: 1px solid var(--border);
-      display: grid; grid-template-columns: 1fr auto;
-      align-items: center; gap: 2rem;
-    }
-    .footer-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.5rem; letter-spacing: 2px;
-    }
-    .footer-logo span { color: var(--orange); }
-    .footer-copy { color: var(--grey); font-size: 0.8rem; margin-top: 0.5rem; }
-    .footer-links { display: flex; gap: 1.5rem; }
-    .footer-links a {
-      color: var(--grey); text-decoration: none;
-      font-size: 0.8rem; letter-spacing: 1px;
-      text-transform: uppercase; transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--orange); }
-
-    /* ── WHATSAPP FLOAT ── */
-    .wa-float {
-      position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
-      background: #25D366; color: #fff;
-      width: 60px; height: 60px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.8rem; text-decoration: none;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
-      animation: waPulse 2.5s ease-in-out infinite;
-      transition: transform 0.2s;
-    }
-    .wa-float:hover { transform: scale(1.1); }
-    @keyframes waPulse {
-      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
-      50% { box-shadow: 0 4px 35px rgba(37,211,102,0.85); }
-    }
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-    @keyframes ticker {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; padding-top: 100px; }
-      .hero::before { display: none; }
-      .hero-visual { display: none; }
-      .why-section { grid-template-columns: 1fr; }
-      .why-visual { display: none; }
-      .process-grid { grid-template-columns: 1fr 1fr; }
-      .process-grid::before { display: none; }
-      .cta-section { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .form-row { grid-template-columns: 1fr; }
-      footer { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-    }
-  </style>
+  <title>Dema Plumbing - Expert Leak Detection, Drain Cleaning & 24/7 Emergency Services</title>
+  <meta name="description" content="Dema Plumbing Enterprise offers professional leak detection, drain cleaning, pipe installation, bathroom & kitchen fitting, water heater services, and 24/7 emergency plumbing in Kenya. Book a free quote today!">
+  <meta name="keywords" content="plumbing, leak detection, drain cleaning, pipe installation, bathroom fitting, water heater, emergency plumbing, plumbing services, Eldoret plumbing, Kenyan plumber">
+  <link rel="canonical" href="https://www.demaplumbing.co.ke/">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dema Plumbing - Expert Plumbing Services"/>
+  <meta property="og:description" content="Professional leak detection, drain cleaning, pipe installation, and 24/7 emergency plumbing services in Kenya. Book a free quote today!"/>
+  <meta property="og:image" content="https://www.demaplumbing.co.ke/images/hero1.jpg"/>
+  <meta property="og:url" content="https://www.demaplumbing.co.ke/"/>
+  <meta property="og:type" content="website"/>
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dema Plumbing - Expert Plumbing Services">
+  <meta name="twitter:description" content="Professional leak detection, drain cleaning, pipe installation, and 24/7 emergency plumbing services in Kenya. Book a free quote today!">
+  <meta name="twitter:image" content="https://www.demaplumbing.co.ke/images/hero1.jpg">
+  
+  <!-- Structured Data (Local Business JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Dema Plumbing Enterprise",
+    "image": "https://www.demaplumbing.co.ke/images/logo.png",
+    "url": "https://www.demaplumbing.co.ke/",
+    "telephone": "+254721342738",
+    "priceRange": "$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Eldoret, Kenya"
+    },
+    "servesCuisine": "Plumbing Services",
+    "openingHours": "24/7",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "0.5317",
+      "longitude": "36.1234"
+    }
+  }
+  </script>
+  
+  <!-- Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="/css/styles.min.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="/js/main.min.js" as="script" onload="this.onload=null;this.rel='script'">
+  
+  <!-- Manifest & Icons -->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/styles.css" media="all">
 </head>
 <body>
+  <!-- Loader -->
+  <div id="page-loader" class="loading-spinner"></div>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <div class="top-bar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span>Eldoret, Kenya</span>
+      </div>
+      <div class="top-bar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <span>richardomondi19@gmail.com</span>
+      </div>
+      <div class="top-bar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <span>+254 721 342 738</span>
+      </div>
+      <div class="top-bar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <span>Mon-Sat: 7AM-7PM | Sun: 8AM-5PM</span>
+      </div>
+    </div>
+    <div class="top-bar-right">
+      <div class="top-bar-social">
+        <a href="https://facebook.com/demaplumbing" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/254721342738" target="_blank" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.854-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.P157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- NAV -->
   <nav>
-    <div class="logo">DEMA<span>.</span></div>
+    <div class="logo">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Faucet Base -->
+        <rect x="20" y="8" width="24" height="8" rx="2" fill="#1E4F91"/>
+        <!-- Faucet Body -->
+        <path d="M28 16V24C28 28.4183 31.5817 32 36 32H40C44.4183 32 48 28.4183 48 24V16H28Z" fill="#3A7BD5"/>
+        <!-- Faucet Spout -->
+        <path d="M48 20H56C58.2091 20 60 21.7909 60 24V26C60 28.2091 58.2091 30 56 30H48V20Z" fill="#1E4F91"/>
+        <!-- Handle -->
+        <rect x="32" y="12" width="8" height="4" rx="1" fill="#59C3C3"/>
+        <!-- Water Drop -->
+        <path d="M56 36C56 36 52 32 52 29C52 27.3431 53.3431 26 55 26C56.6569 26 58 27.3431 58 29C58 32 54 36 54 36H56Z" fill="#59C3C3" opacity="0.8"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-dema">DEMA</span>
+        <span class="logo-subtitle">Plumbing Enterprise</span>
+      </div>
+    </div>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#why">Why Us</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="/index.html" class="active">Home</a></li>
+      <li><a href="/about/index.html">About</a></li>
+      <li class="nav-dropdown">
+        <a href="/services/index.html">
+          Services
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </a>
+        <div class="dropdown-menu">
+          <a href="/services/index.html">All Services</a>
+          <a href="/services/leak-detection/index.html">Leak Detection</a>
+          <a href="/services/drain-cleaning/index.html">Drain Cleaning</a>
+          <a href="/services/pipe-installation/index.html">Pipe Installation</a>
+          <a href="/services/emergency-plumbing/index.html">Emergency Plumbing</a>
+        </div>
+      </li>
+      <li><a href="/gallery.html">Projects</a></li>
+      <li><a href="/contact/index.html">Contact</a></li>
     </ul>
     <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
   </nav>
@@ -514,34 +158,131 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-text">
-      <div class="hero-badge">⚡ Available 24/7 — Emergency Service</div>
-      <h1>Expert<em>Plumbing</em>Solutions</h1>
-      <p>Dema Plumbing Enterprise delivers fast, reliable, and professional plumbing services for homes and businesses. We handle it all — from leaks to full installations.</p>
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+          Fast, Reliable Service
+        </div>
+        <div class="hero-badge emergency">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          24/7 Emergency
+        </div>
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Licensed & Insured
+        </div>
+      </div>
+      <h1>Expert<em>Plumbing</em> Solutions</h1>
+      <p>Dema Plumbing delivers fast, reliable, and professional plumbing services for homes and businesses. We handle everything from leaks to full installations.</p>
+      <div class="hero-service-line">Serving Eldoret, Uasin Gishu, Nandi, Kisumu, Siaya, Homa Bay, Migori, Kisii, Nyamira and surrounding areas. Available for residential, commercial and emergency plumbing services.</div>
       <div class="hero-btns">
         <a href="#contact" class="btn-primary">Get Free Quote</a>
-        <a href="#services" class="btn-outline">Our Services</a>
+        <a href="/services/index.html" class="btn-outline">Our Services</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 911.01"/>
+          </svg>
+          <span>10+ Years Experience</span>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <span>5-Star Rated</span>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          <span>500+ Happy Clients</span>
+        </div>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-icon-wrap">
-        <div class="big-icon">🔧</div>
+    <div class="hero-img">
+      <img src="/images/hero1.jpg" alt="Professional plumber at work" loading="lazy" style="width:100%; height:auto; display:block;">
+    </div>
+  </section>
+
+  <!-- STATISTICS COUNTERS -->
+  <section class="statistics">
+    <div class="stat-box">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">Projects Completed</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Years of Experience</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Availability</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">5-Star</div>
+      <div class="stat-label">Customer Rating</div>
+    </div>
+  </section>
+
+  <!-- QUICK CONTACT STRIP -->
+  <section class="quick-contact">
+    <div class="quick-contact-grid">
+      <div class="quick-contact-card">
+        <div class="quick-contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <h4>Call Us</h4>
+        <p>+254 721 342 738</p>
+        <a href="tel:+254721342738" class="quick-contact-btn">Call Now</a>
       </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <div class="stat-num">500+</div>
-          <div class="stat-label">Jobs Done</div>
+      <div class="quick-contact-card">
+        <div class="quick-contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
         </div>
-        <div class="stat">
-          <div class="stat-num">10+</div>
-          <div class="stat-label">Years Exp.</div>
+        <h4>Email Us</h4>
+        <p>richardomondi19@gmail.com</p>
+        <a href="mailto:richardomondi19@gmail.com" class="quick-contact-btn">Send Email</a>
+      </div>
+      <div class="quick-contact-card">
+        <div class="quick-contact-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
         </div>
-        <div class="stat">
-          <div class="stat-num">24/7</div>
-          <div class="stat-label">Available</div>
+        <h4>WhatsApp</h4>
+        <p>Quick Response</p>
+        <a href="https://wa.me/254721342738" target="_blank" class="quick-contact-btn whatsapp">Chat Now</a>
+      </div>
+      <div class="quick-contact-card">
+        <div class="quick-contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
         </div>
+        <h4>Location</h4>
+        <p>Eldoret, Kenya</p>
+        <a href="#contact" class="quick-contact-btn">Get Directions</a>
       </div>
     </div>
-    <div class="hero-pipe-bg">PIPE</div>
   </section>
 
   <!-- TICKER -->
@@ -554,7 +295,6 @@
       <span>BATHROOM FITTING</span><span class="ticker-dot">◆</span>
       <span>EMERGENCY SERVICE</span><span class="ticker-dot">◆</span>
       <span>SEWAGE SYSTEMS</span><span class="ticker-dot">◆</span>
-      <span>INSPECTIONS</span><span class="ticker-dot">◆</span>
       <!-- duplicate for loop -->
       <span>LEAK REPAIR</span><span class="ticker-dot">◆</span>
       <span>DRAIN CLEANING</span><span class="ticker-dot">◆</span>
@@ -563,179 +303,203 @@
       <span>BATHROOM FITTING</span><span class="ticker-dot">◆</span>
       <span>EMERGENCY SERVICE</span><span class="ticker-dot">◆</span>
       <span>SEWAGE SYSTEMS</span><span class="ticker-dot">◆</span>
-      <span>INSPECTIONS</span><span class="ticker-dot">◆</span>
     </div>
   </div>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="section-label"><span>What We Do</span></div>
-    <h2 class="section-title">Our Plumbing Services</h2>
+  <!-- SERVICES PREVIEW -->
+  <section id="services-preview">
+    <div class="section-label"><span>Our Services</span></div>
+    <h2 class="section-title">Professional Plumbing Services</h2>
     <p class="section-sub">From routine maintenance to complex installations, our certified plumbers handle every job with precision and speed.</p>
+    
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon">🚰</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          </svg>
+        </div>
         <h3>Leak Detection & Repair</h3>
         <p>We locate and fix leaks fast — pipes, faucets, fixtures — using modern detection tools to prevent water damage before it spreads.</p>
+        <a href="/services/leak-detection/index.html" class="service-learn-more">
+          Learn More
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
       </div>
       <div class="service-card">
-        <div class="service-icon">🌀</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
         <h3>Drain Cleaning</h3>
         <p>Clogged drains cleared efficiently. We use hydro-jetting and snaking to restore full flow in kitchens, bathrooms, and main lines.</p>
+        <a href="/services/drain-cleaning/index.html" class="service-learn-more">
+          Learn More
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
       </div>
       <div class="service-card">
-        <div class="service-icon">🔩</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
         <h3>Pipe Installation & Repair</h3>
         <p>New construction or pipe replacement — we install copper, PVC, and PEX piping systems built to last decades.</p>
+        <a href="/services/pipe-installation/index.html" class="service-learn-more">
+          Learn More
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
       </div>
       <div class="service-card">
-        <div class="service-icon">🚿</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3h18v18H3zM9 9h6v6H9z"/>
+          </svg>
+        </div>
         <h3>Bathroom & Kitchen Fitting</h3>
         <p>Complete bathroom and kitchen plumbing installations including sinks, toilets, showers, bathtubs, and fixtures.</p>
+        <a href="/services/bathroom-fitting/index.html" class="service-learn-more">
+          Learn More
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
       </div>
       <div class="service-card">
-        <div class="service-icon">🔥</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20M2 12h20"/>
+          </svg>
+        </div>
         <h3>Water Heater Services</h3>
         <p>Installation, repair, and maintenance of traditional tank and tankless water heaters for consistent hot water supply.</p>
+        <a href="/services/water-heater/index.html" class="service-learn-more">
+          Learn More
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
       </div>
       <div class="service-card">
-        <div class="service-icon">🏗️</div>
-        <h3>Sewage & Drainage Systems</h3>
-        <p>Full sewage line inspection, cleaning, repair, and new drainage system design for residential and commercial properties.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">💧</div>
-        <h3>Water Pressure Solutions</h3>
-        <p>Diagnose and fix low or high water pressure issues, pressure regulator installation, and pump servicing.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🚨</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
         <h3>24/7 Emergency Plumbing</h3>
         <p>Burst pipes, flooding, or total blockages — our emergency team is on call around the clock to respond fast.</p>
+        <a href="/services/emergency-plumbing/index.html" class="service-learn-more">
+          Learn More
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- WHY US -->
-  <section id="why" class="why-section">
-    <div>
-      <div class="section-label"><span>Why Choose Us</span></div>
-      <h2 class="section-title">Built on Trust & Quality</h2>
-      <p class="section-sub">We don't just fix pipes — we build lasting relationships with our customers through honesty and craftsmanship.</p>
-      <div class="why-list">
-        <div class="why-item">
-          <div class="why-num">01</div>
-          <div>
-            <h4>Licensed & Certified Professionals</h4>
-            <p>All our plumbers are fully licensed, insured, and regularly trained on the latest techniques and safety standards.</p>
-          </div>
+  <!-- WHY CHOOSE US -->
+  <section class="why-section">
+    <div class="section-label"><span>Why Choose Us</span></div>
+    <h2 class="section-title">Why Dema Plumbing?</h2>
+    <p class="section-sub">We don't just fix pipes — we build lasting relationships through honesty and craftsmanship.</p>
+    
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 911.01"/>
+          </svg>
         </div>
-        <div class="why-item">
-          <div class="why-num">02</div>
-          <div>
-            <h4>Transparent Pricing — No Hidden Fees</h4>
-            <p>We give clear upfront quotes. The price we quote is the price you pay — guaranteed, no surprises on your bill.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <div class="why-num">03</div>
-          <div>
-            <h4>Fast Response Times</h4>
-            <p>We show up on time, every time. Emergency calls answered within the hour, standard jobs booked within 24 hours.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <div class="why-num">04</div>
-          <div>
-            <h4>Satisfaction Guaranteed</h4>
-            <p>Every job comes with a workmanship warranty. If it's not right, we come back and fix it — at no extra cost.</p>
-          </div>
-        </div>
+        <h4>Experienced Technicians</h4>
+        <p>10+ years of professional plumbing expertise</p>
       </div>
-    </div>
-    <div class="why-visual">
-      <div class="why-box">
-        <div class="why-box-icon">🏆</div>
-        <h3>10+ Years of Trusted Service</h3>
-        <p>Serving hundreds of satisfied customers across the region with professional plumbing solutions.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section id="process">
-    <div class="section-label"><span>How It Works</span></div>
-    <h2 class="section-title">Our Simple Process</h2>
-    <p class="section-sub">Getting your plumbing fixed is straightforward with Dema. Four easy steps to a resolved problem.</p>
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="step-circle"><span class="step-num">01</span></div>
-        <h4>Call or Book Online</h4>
-        <p>Reach out by phone or fill our contact form. Describe your plumbing issue and preferred time.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-circle"><span class="step-num">02</span></div>
-        <h4>Free Assessment</h4>
-        <p>Our plumber arrives, inspects the problem, and gives you a transparent quote before any work begins.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-circle"><span class="step-num">03</span></div>
-        <h4>Expert Repair</h4>
-        <p>We get to work immediately using professional tools and quality materials to fix the issue properly.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-circle"><span class="step-num">04</span></div>
-        <h4>Quality Check & Warranty</h4>
-        <p>We test everything, clean up our workspace, and hand you a warranty on all completed work.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials-bg">
-    <div style="padding: 6rem 6%;">
-      <div class="section-label"><span>Customer Reviews</span></div>
-      <h2 class="section-title">What Clients Say</h2>
-      <p class="section-sub">Don't take our word for it — here's what our customers have to say after working with Dema Plumbing.</p>
-      <div class="testimonials-grid">
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>Dema Plumbing responded to my burst pipe emergency at 2am within 45 minutes. Incredibly professional and had everything fixed before morning. Absolute lifesavers.</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">JM</div>
-            <div>
-              <div class="author-name">James M.</div>
-              <div class="author-loc">Residential Client</div>
-            </div>
-          </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
         </div>
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>Used them for a full bathroom renovation — new pipes, fixtures, everything. The work was clean, on schedule, and the pricing was exactly what they quoted. Highly recommend.</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">SA</div>
-            <div>
-              <div class="author-name">Sarah A.</div>
-              <div class="author-loc">Homeowner</div>
-            </div>
-          </div>
+        <h4>Fast Response</h4>
+        <p>Emergency calls answered within the hour</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
         </div>
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>Our commercial property had a persistent drainage issue three other plumbers couldn't fix. Dema diagnosed and resolved it the same day. Outstanding team.</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">RK</div>
-            <div>
-              <div class="author-name">Robert K.</div>
-              <div class="author-loc">Commercial Property Owner</div>
-            </div>
-          </div>
+        <h4>Affordable Pricing</h4>
+        <p>Transparent quotes with no hidden fees</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
         </div>
+        <h4>Quality Materials</h4>
+        <p>We use only premium-grade fixtures</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h4>Guaranteed Workmanship</h4>
+        <p>Every job comes with a warranty</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h4>Licensed Professionals</h4>
+        <p>Fully certified and insured team</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <h4>24/7 Support</h4>
+        <p>Round-the-clock emergency services</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h4>Customer Satisfaction</h4>
+        <p>500+ happy clients across Kenya</p>
       </div>
     </div>
   </section>
 
-  <!-- CTA BANNER -->
+  <!-- CTA -->
   <section class="cta-section">
     <div>
       <h2>Got a Plumbing Problem? We Fix It Fast.</h2>
@@ -744,103 +508,380 @@
     <a href="#contact" class="btn-dark">Book Now →</a>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="section-label"><span>Contact Us</span></div>
-    <h2 class="section-title">Get In Touch</h2>
-    <p class="section-sub">Ready to get started? Reach out and we'll respond within the hour.</p>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-item">
-          <div class="contact-icon">📞</div>
-          <div>
-            <h4>Phone</h4>
-            <p>+254 721 342 738<br/>Available 24 hours, 7 days a week</p>
-          </div>
+  <!-- PROJECTS SECTION -->
+  <section class="projects-section">
+    <div class="section-label"><span>Our Work</span></div>
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-sub">See some of our recent plumbing installations and repairs across Eldoret and beyond.</p>
+    
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="/images/project1.jpg" alt="Bathroom renovation project" loading="lazy">
         </div>
-        <div class="contact-item">
-          <div class="contact-icon">✉️</div>
-          <div>
-            <h4>Email</h4>
-            <p>richardomondi19@gmail.com<br/>We reply within 2 hours</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div>
-            <h4>Service Area</h4>
-            <p>Based in Eldoret, Kenya<br/>Serving clients across the country</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">💬</div>
-          <div>
-            <h4>WhatsApp</h4>
-            <p><a href="https://wa.me/254721342738" target="_blank" style="color:var(--orange);text-decoration:none;font-weight:600;">Chat with us on WhatsApp →</a><br/>Quick replies, anytime</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">🕐</div>
-          <div>
-            <h4>Hours</h4>
-            <p>Mon–Sat: 7am – 9pm<br/>Sun & Emergencies: 24/7</p>
-          </div>
+        <div class="project-content">
+          <span class="project-badge">Residential</span>
+          <h4>Complete Bathroom Renovation</h4>
+          <p>Full bathroom plumbing installation with modern fixtures and water-efficient systems.</p>
         </div>
       </div>
-      <div class="contact-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name</label>
-            <input type="text" placeholder="John"/>
-          </div>
-          <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" placeholder="Doe"/>
-          </div>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="/images/project2.jpg" alt="Commercial pipe installation" loading="lazy">
         </div>
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="+1 (000) 000-0000"/>
+        <div class="project-content">
+          <span class="project-badge">Commercial</span>
+          <h4>Office Building Pipe System</h4>
+          <p>Large-scale commercial plumbing installation for a 3-story office complex.</p>
         </div>
-        <div class="form-group">
-          <label>Service Needed</label>
-          <select>
-            <option>Select a service...</option>
-            <option>Leak Detection & Repair</option>
-            <option>Drain Cleaning</option>
-            <option>Pipe Installation</option>
-            <option>Bathroom / Kitchen Fitting</option>
-            <option>Water Heater Service</option>
-            <option>Sewage & Drainage</option>
-            <option>Emergency Plumbing</option>
-            <option>Other</option>
-          </select>
+      </div>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="/images/project3.jpg" alt="Emergency leak repair" loading="lazy">
         </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea placeholder="Describe your plumbing issue..."></textarea>
+        <div class="project-content">
+          <span class="project-badge">Emergency</span>
+          <h4>Burst Pipe Emergency Repair</h4>
+          <p>Quick response emergency repair preventing major water damage to property.</p>
         </div>
-        <button class="form-submit">Send Request →</button>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="/gallery.html" class="btn-primary">View All Projects</a>
+    </div>
+  </section>
+
+  <!-- REGIONAL SERVICE AREAS -->
+  <section class="regional-areas">
+    <div class="section-label"><span>Coverage</span></div>
+    <h2 class="section-title">Areas We Serve</h2>
+    <p class="section-sub">We proudly provide residential, commercial and emergency plumbing services throughout Nyanza Region, Uasin Gishu County, Nandi County and surrounding towns.</p>
+    
+    <!-- Nyanza Region -->
+    <div class="region-section">
+      <div class="region-header">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <h3>Nyanza Region</h3>
+      </div>
+      <div class="region-counties">
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>Kisumu County</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>Siaya County</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>Homa Bay County</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>Migori County</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>Kisii County</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>Nyamira County</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Rift Valley -->
+    <div class="region-section">
+      <div class="region-header">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <h3>Rift Valley</h3>
+      </div>
+      <div class="region-counties">
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>Uasin Gishu County</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>Nandi County</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Featured Towns & Cities -->
+    <div class="region-section">
+      <div class="region-header">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+        </svg>
+        <h3>Featured Towns & Cities</h3>
+      </div>
+      <div class="region-counties">
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Eldoret</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Kisumu</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Kisii</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Homa Bay</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Migori</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Siaya</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Bondo</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Ahero</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Oyugis</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Mbita</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Rongo</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Awendo</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Kapsabet</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Nandi Hills</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Turbo</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Burnt Forest</span>
+        </div>
+        <div class="county-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+          </svg>
+          <span>Moi's Bridge</span>
+        </div>
+      </div>
+      <div class="region-description">
+        <p>We proudly provide residential, commercial and emergency plumbing services throughout Nyanza Region, Uasin Gishu County, Nandi County and surrounding towns. Contact us today for professional plumbing solutions in your area.</p>
       </div>
     </div>
   </section>
 
+  <!-- ABOUT SECTION -->
+  <section class="about-section">
+    <div class="about-grid">
+      <div class="about-content">
+        <h2>About Dema Plumbing Enterprise</h2>
+        <p>Founded with a commitment to excellence, Dema Plumbing Enterprise has been serving Eldoret and surrounding areas for over 10 years. We specialize in residential and commercial plumbing services, from routine maintenance to complex installations.</p>
+        <p>Our mission is to provide reliable, affordable, and high-quality plumbing solutions that exceed customer expectations. We believe in transparent pricing, honest work, and building lasting relationships with our clients.</p>
+        <p>Our vision is to be the most trusted plumbing company in Kenya, known for our professionalism, integrity, and exceptional service quality.</p>
+        
+        <div class="about-values">
+          <div class="value-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 911.01"/>
+            </svg>
+            <span>Quality First</span>
+          </div>
+          <div class="value-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>Integrity</span>
+          </div>
+          <div class="value-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            <span>Customer Focus</span>
+          </div>
+          <div class="value-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+            <span>Reliability</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-image">
+        <img src="/images/about-team.jpg" alt="Dema Plumbing professional team" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="backToTop" aria-label="Back to top">↑</button>
+
   <!-- FOOTER -->
   <footer>
-    <div>
-      <div class="footer-logo">DEMA <span>PLUMBING</span> ENTERPRISE</div>
-      <div class="footer-copy">© 2026 Dema Plumbing Enterprise. All rights reserved.</div>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4C20 4 12 8 12 16C12 20 14 22 14 22C14 22 12 24 12 28C12 32 16 36 20 36C24 36 28 32 28 28C28 24 26 22 26 22C26 22 28 20 28 16C28 8 20 4 20 4Z" fill="#1E4F91"/>
+            <path d="M20 8C20 8 15 10 15 16C15 18 16 20 16 20C16 20 15 21 15 24C15 27 17 30 20 30C23 30 25 27 25 24C25 21 24 20 24 20C24 20 25 18 25 16C25 10 20 8 20 8Z" fill="#3A7BD5"/>
+            <rect x="18" y="2" width="4" height="4" rx="1" fill="#1E4F91"/>
+            <path d="M20 2V6" stroke="#59C3C3" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          DEMA <span>PLUMBING</span> ENTERPRISE
+        </div>
+        <div class="footer-copy">Professional plumbing services for residential and commercial clients in Eldoret and across Kenya. Quality workmanship, transparent pricing, and 24/7 emergency support.</div>
+        <div class="footer-social">
+          <a href="https://facebook.com/demaplumbing" target="_blank" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/254721342738" target="_blank" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </a>
+          <a href="tel:+254721342738" aria-label="Call Us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </a>
+          <a href="mailto:richardomondi19@gmail.com" aria-label="Email Us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="/index.html" class="active">Home</a>
+        <a href="/about/index.html">About Us</a>
+        <a href="/services/index.html">Services</a>
+        <a href="/gallery.html">Gallery</a>
+        <a href="/contact/index.html">Contact</a>
+      </div>
+      <div class="footer-links">
+        <h4>Our Services</h4>
+        <a href="/services/leak-detection/index.html">Leak Detection</a>
+        <a href="/services/drain-cleaning/index.html">Drain Cleaning</a>
+        <a href="/services/pipe-installation/index.html">Pipe Installation</a>
+        <a href="/services/emergency-plumbing/index.html">Emergency Plumbing</a>
+        <a href="/services/bathroom-fitting/index.html">Bathroom Fitting</a>
+      </div>
+      <div class="footer-links">
+        <h4>Contact Info</h4>
+        <a href="tel:+254721342738">+254 721 342 738</a>
+        <a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a>
+        <div class="footer-working-hours">
+          <p><strong>Mon - Sat:</strong> 7:00 AM - 7:00 PM</p>
+          <p><strong>Sunday:</strong> 8:00 AM - 5:00 PM</p>
+          <p><strong>Emergency:</strong> 24/7 Available</p>
+        </div>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#why">About</a>
-      <a href="#contact">Contact</a>
+    <div class="footer-bottom">
+      <p>© 2026 Dema Plumbing Enterprise. All rights reserved. | Serving Eldoret and Uasin Gishu County</p>
     </div>
   </footer>
 
-  <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/254721342738" target="_blank" class="wa-float" title="Chat on WhatsApp">💬</a>
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/254721342738" class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
 
+  <script src="/js/main.min.js" defer></script>
 </body>
 </html>

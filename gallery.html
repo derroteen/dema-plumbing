@@ -52,13 +52,13 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
   <!-- Manifest & Icons -->
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="/images/icons/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/images/icons/favicon-32x32.svg" sizes="32x32" type="image/svg+xml">
-  <link rel="icon" href="/images/icons/favicon-16x16.svg" sizes="16x16" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="images/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/icons/favicon-32x32.svg" sizes="32x32" type="image/svg+xml">
+  <link rel="icon" href="images/icons/favicon-16x16.svg" sizes="16x16" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.svg">
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/styles.css" media="all">
+  <link rel="stylesheet" href="css/styles.css" media="all">
 </head>
 <body>
   <!-- Top Bar -->
@@ -111,29 +111,29 @@
   <!-- NAV -->
   <nav>
     <div class="logo">
-      <img src="/images/logo/logo.svg" alt="Dema Plumbing Enterprise Logo" width="40" height="40">
+      <img src="images/logo/logo.svg" alt="Dema Plumbing Enterprise Logo" width="40" height="40">
       DEMA<span>.</span>
     </div>
     <ul class="nav-links">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/about/index.html">About</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about/index.html">About</a></li>
       <li class="nav-dropdown">
-        <a href="/services/index.html">
+        <a href="services/index.html">
           Services
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="6 9 12 15 18 9"/>
           </svg>
         </a>
         <div class="dropdown-menu">
-          <a href="/services/index.html">All Services</a>
-          <a href="/services/leak-detection/index.html">Leak Detection</a>
-          <a href="/services/drain-cleaning/index.html">Drain Cleaning</a>
-          <a href="/services/pipe-installation/index.html">Pipe Installation</a>
-          <a href="/services/emergency-plumbing/index.html">Emergency Plumbing</a>
+          <a href="services/index.html">All Services</a>
+          <a href="services/leak-detection/index.html">Leak Detection</a>
+          <a href="services/drain-cleaning/index.html">Drain Cleaning</a>
+          <a href="services/pipe-installation/index.html">Pipe Installation</a>
+          <a href="services/emergency-plumbing/index.html">Emergency Plumbing</a>
         </div>
       </li>
-      <li><a href="/gallery.html" class="active">Projects</a></li>
-      <li><a href="/contact/index.html">Contact</a></li>
+      <li><a href="gallery.html" class="active">Projects</a></li>
+      <li><a href="contact/index.html">Contact</a></li>
     </ul>
     <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
   </nav>
@@ -227,7 +227,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">
-          <img src="/images/logo/logo.svg" alt="Dema Plumbing Enterprise Logo" width="36" height="36">
+          <img src="images/logo/logo.svg" alt="Dema Plumbing Enterprise Logo" width="36" height="36">
           DEMA <span>PLUMBING</span> ENTERPRISE
         </div>
         <div class="footer-copy">Professional plumbing services for residential and commercial clients in Eldoret and across Kenya. Quality workmanship, transparent pricing, and 24/7 emergency support.</div>
@@ -257,19 +257,19 @@
       </div>
       <div class="footer-links">
         <h4>Quick Links</h4>
-        <a href="/index.html">Home</a>
-        <a href="/about/index.html">About Us</a>
-        <a href="/services/index.html">Services</a>
-        <a href="/gallery.html">Gallery</a>
-        <a href="/contact/index.html">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="about/index.html">About Us</a>
+        <a href="services/index.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact/index.html">Contact</a>
       </div>
       <div class="footer-links">
         <h4>Our Services</h4>
-        <a href="/services/leak-detection/index.html">Leak Detection</a>
-        <a href="/services/drain-cleaning/index.html">Drain Cleaning</a>
-        <a href="/services/pipe-installation/index.html">Pipe Installation</a>
-        <a href="/services/emergency-plumbing/index.html">Emergency Plumbing</a>
-        <a href="/services/bathroom-fitting/index.html">Bathroom Fitting</a>
+        <a href="services/leak-detection/index.html">Leak Detection</a>
+        <a href="services/drain-cleaning/index.html">Drain Cleaning</a>
+        <a href="services/pipe-installation/index.html">Pipe Installation</a>
+        <a href="services/emergency-plumbing/index.html">Emergency Plumbing</a>
+        <a href="services/bathroom-kitchen-fitting/index.html">Bathroom Fitting</a>
       </div>
       <div class="footer-links">
         <h4>Contact Info</h4>
@@ -288,7 +288,7 @@
   </footer>
 
   <!-- JS -->
-  <script src="/js/gallery-data.js"></script>
+  <script src="js/gallery-data.js"></script>
   <script>
     // Gallery functionality
     document.addEventListener('DOMContentLoaded', () => {
@@ -351,7 +351,7 @@
           imageContainer.className = 'gallery-image-container';
           
           const img = document.createElement('img');
-          img.src = `/images/projects/${project.image}`;
+          img.src = `images/projects/${project.image}`;
           img.alt = project.title;
           img.loading = 'lazy';
           img.decoding = 'async';
@@ -392,7 +392,7 @@
         currentImageIndex = index;
         const project = filteredProjects[index];
         
-        lightboxImg.src = `/images/projects/${project.image}`;
+        lightboxImg.src = `images/projects/${project.image}`;
         lightboxTitle.textContent = project.title;
         lightboxDescription.textContent = project.description;
         lightboxCategory.textContent = getCategoryName(project.category);

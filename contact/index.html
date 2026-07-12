@@ -25,34 +25,45 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "Plumber",
     "name": "Dema Plumbing Enterprise",
     "image": "https://www.demaplumbing.co.ke/images/logo.png",
     "url": "https://www.demaplumbing.co.ke/",
     "telephone": "+254721342738",
-    "priceRange": "$$$",
+    "email": "richardomondi19@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Eldoret, Kenya"
+      "streetAddress": "Eldoret",
+      "addressLocality": "Eldoret",
+      "addressRegion": "Uasin Gishu",
+      "addressCountry": "KE"
     },
-    "servesCuisine": "Plumbing Services",
-    "openingHours": "24/7",
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "0.5317",
-      "longitude": "36.1234"
-    }
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "07:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "08:00", "closes": "17:00" }
+    ],
+    "geo": { "@type": "GeoCoordinates", "latitude": "0.5317", "longitude": "35.2698" }
   }
   </script>
   
+  <!-- Theme color -->
+  <meta name="theme-color" content="#1E4F91">
+
   <!-- Preconnect & Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/images/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/images/icons/favicon-32x32.svg" sizes="32x32" type="image/svg+xml">
+  <link rel="icon" href="/images/icons/favicon-16x16.svg" sizes="16x16" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.svg">
   <link rel="stylesheet" href="/css/styles.css"/>
 </head>
 <body>
-  <!-- Top Bar -->
+  <!-- Skip navigation -->
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
   <div class="top-bar">
     <div class="top-bar-left">
       <div class="top-bar-item">
@@ -102,12 +113,7 @@
   <!-- NAV -->
   <nav>
     <div class="logo">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 4C20 4 12 8 12 16C12 20 14 22 14 22C14 22 12 24 12 28C12 32 16 36 20 36C24 36 28 32 28 28C28 24 26 22 26 22C26 22 28 20 28 16C28 8 20 4 20 4Z" fill="#1E4F91"/>
-        <path d="M20 8C20 8 15 10 15 16C15 18 16 20 16 20C16 20 15 21 15 24C15 27 17 30 20 30C23 30 25 27 25 24C25 21 24 20 24 20C24 20 25 18 25 16C25 10 20 8 20 8Z" fill="#3A7BD5"/>
-        <rect x="18" y="2" width="4" height="4" rx="1" fill="#1E4F91"/>
-        <path d="M20 2V6" stroke="#59C3C3" stroke-width="2" stroke-linecap="round"/>
-      </svg>
+      <img src="/images/logo/logo.svg" alt="Dema Plumbing Enterprise Logo" width="40" height="40">
       DEMA<span>.</span>
     </div>
     <ul class="nav-links">
@@ -128,13 +134,14 @@
           <a href="/services/emergency-plumbing/index.html">Emergency Plumbing</a>
         </div>
       </li>
-      <li><a href="/gallery.html">Gallery</a></li>
+      <li><a href="/gallery.html">Projects</a></li>
       <li><a href="/contact/index.html" class="active">Contact</a></li>
     </ul>
     <button class="nav-cta" onclick="document.getElementById('contact-section').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
   </nav>
 
   <!-- HERO -->
+  <main id="main-content">
   <section class="hero" id="contact">
     <div class="hero-text">
       <div class="hero-badge">
@@ -220,22 +227,26 @@
         <input type="hidden" name="_subject" value="New Contact Form Submission">
         <div class="form-row">
           <div class="form-group">
-            <label>First Name</label>
-            <input type="text" name="first_name" placeholder="John" required>
+            <label for="c-first">First Name</label>
+            <input type="text" id="c-first" name="first_name" placeholder="John" required autocomplete="given-name">
           </div>
           <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" name="last_name" placeholder="Doe" required>
+            <label for="c-last">Last Name</label>
+            <input type="text" id="c-last" name="last_name" placeholder="Doe" required autocomplete="family-name">
           </div>
         </div>
         <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" name="phone" placeholder="+254721342738" required>
+          <label for="c-phone">Phone Number</label>
+          <input type="tel" id="c-phone" name="phone" placeholder="+254 712 345 678" required autocomplete="tel">
         </div>
         <div class="form-group">
-          <label>Service Needed</label>
-          <select name="service" required>
-            <option>Select a service...</option>
+          <label for="c-email">Email Address</label>
+          <input type="email" id="c-email" name="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="c-service">Service Needed</label>
+          <select id="c-service" name="service" required>
+            <option value="" disabled selected>Select a service...</option>
             <option>Leak Detection & Repair</option>
             <option>Drain Cleaning</option>
             <option>Pipe Installation</option>
@@ -247,16 +258,16 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Message</label>
-          <textarea name="message" placeholder="Describe your plumbing issue..." required></textarea>
+          <label for="c-message">Message</label>
+          <textarea id="c-message" name="message" placeholder="Describe your plumbing issue..." required></textarea>
         </div>
         <button type="submit" class="form-submit">Send Request</button>
       </form>
-      <div id="formStatus" class="form-status loading">Sending...</div>
+      <div id="formStatus" class="form-status" role="status" aria-live="polite" aria-atomic="true"></div>
     </div>
   </section>
 
-  <script src="/js/main.js"></script>
+  <script src="/js/main.js" defer></script>
   <script>
     // Form submission handling with FormSubmit
     document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -303,6 +314,8 @@
     });
   </script>
 
+  </main>
+
   <!-- WhatsApp FAB -->
   <a href="https://wa.me/254721342738" class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -315,12 +328,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">
-          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 4C20 4 12 8 12 16C12 20 14 22 14 22C14 22 12 24 12 28C12 32 16 36 20 36C24 36 28 32 28 28C28 24 26 22 26 22C26 22 28 20 28 16C28 8 20 4 20 4Z" fill="#1E4F91"/>
-            <path d="M20 8C20 8 15 10 15 16C15 18 16 20 16 20C16 20 15 21 15 24C15 27 17 30 20 30C23 30 25 27 25 24C25 21 24 20 24 20C24 20 25 18 25 16C25 10 20 8 20 8Z" fill="#3A7BD5"/>
-            <rect x="18" y="2" width="4" height="4" rx="1" fill="#1E4F91"/>
-            <path d="M20 2V6" stroke="#59C3C3" stroke-width="2" stroke-linecap="round"/>
-          </svg>
+          <img src="/images/logo/logo.svg" alt="Dema Plumbing Enterprise Logo" width="36" height="36">
           DEMA <span>PLUMBING</span> ENTERPRISE
         </div>
         <div class="footer-copy">Professional plumbing services for residential and commercial clients in Eldoret and across Kenya. Quality workmanship, transparent pricing, and 24/7 emergency support.</div>

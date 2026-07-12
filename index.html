@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,43 +27,60 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "Plumber",
     "name": "Dema Plumbing Enterprise",
     "image": "https://www.demaplumbing.co.ke/images/logo.png",
     "url": "https://www.demaplumbing.co.ke/",
     "telephone": "+254721342738",
-    "priceRange": "$$$",
+    "email": "richardomondi19@gmail.com",
+    "description": "Professional leak detection, drain cleaning, pipe installation, bathroom & kitchen fitting, water heater services, and 24/7 emergency plumbing in Kenya.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Eldoret, Kenya"
+      "streetAddress": "Eldoret",
+      "addressLocality": "Eldoret",
+      "addressRegion": "Uasin Gishu",
+      "addressCountry": "KE"
     },
-    "servesCuisine": "Plumbing Services",
-    "openingHours": "24/7",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "07:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "08:00", "closes": "17:00" }
+    ],
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": "0.5317",
-      "longitude": "36.1234"
-    }
+      "longitude": "35.2698"
+    },
+    "sameAs": [
+      "https://facebook.com/demaplumbing"
+    ],
+    "areaServed": ["Eldoret","Kisumu","Kisii","Homa Bay","Migori","Siaya","Kapsabet","Nandi Hills"]
   }
   </script>
   
+  <!-- Theme color -->
+  <meta name="theme-color" content="#1E4F91">
+
   <!-- Preconnect & Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
-  <link rel="preload" href="/css/styles.min.css" as="style" onload="this.rel='stylesheet'">
-  <link rel="preload" href="/js/main.min.js" as="script" onload="this.onload=null;this.rel='script'">
-  
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
   <!-- Manifest & Icons -->
   <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/images/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/images/icons/favicon-32x32.svg" sizes="32x32" type="image/svg+xml">
+  <link rel="icon" href="/images/icons/favicon-16x16.svg" sizes="16x16" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.svg">
   
   <!-- CSS -->
   <link rel="stylesheet" href="/css/styles.css" media="all">
 </head>
 <body>
+  <!-- Skip navigation for accessibility -->
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
   <!-- Loader -->
-  <div id="page-loader" class="loading-spinner"></div>
+  <div id="page-loader" class="loading-spinner" role="status" aria-label="Loading page"></div>
 
   <!-- Top Bar -->
   <div class="top-bar">
@@ -114,18 +132,7 @@
   <!-- NAV -->
   <nav>
     <div class="logo">
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Faucet Base -->
-        <rect x="20" y="8" width="24" height="8" rx="2" fill="#1E4F91"/>
-        <!-- Faucet Body -->
-        <path d="M28 16V24C28 28.4183 31.5817 32 36 32H40C44.4183 32 48 28.4183 48 24V16H28Z" fill="#3A7BD5"/>
-        <!-- Faucet Spout -->
-        <path d="M48 20H56C58.2091 20 60 21.7909 60 24V26C60 28.2091 58.2091 30 56 30H48V20Z" fill="#1E4F91"/>
-        <!-- Handle -->
-        <rect x="32" y="12" width="8" height="4" rx="1" fill="#59C3C3"/>
-        <!-- Water Drop -->
-        <path d="M56 36C56 36 52 32 52 29C52 27.3431 53.3431 26 55 26C56.6569 26 58 27.3431 58 29C58 32 54 36 54 36H56Z" fill="#59C3C3" opacity="0.8"/>
-      </svg>
+      <img src="/images/logo/logo.svg" alt="Dema Plumbing Enterprise Logo" width="64" height="64">
       <div class="logo-text">
         <span class="logo-dema">DEMA</span>
         <span class="logo-subtitle">Plumbing Enterprise</span>
@@ -152,10 +159,11 @@
       <li><a href="/gallery.html">Projects</a></li>
       <li><a href="/contact/index.html">Contact</a></li>
     </ul>
-    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Get a free quote">Get a Quote</button>
   </nav>
 
   <!-- HERO -->
+  <main id="main-content">
   <section class="hero" id="home">
     <div class="hero-text">
       <div class="hero-badges">
@@ -802,20 +810,138 @@
     </div>
   </section>
 
+  <!-- TESTIMONIALS SECTION -->
+  <section class="testimonials-section" aria-labelledby="testimonials-heading">
+    <div class="section-label"><span>Customer Reviews</span></div>
+    <h2 class="section-title" id="testimonials-heading">What Our Clients Say</h2>
+    <p class="section-sub">Real feedback from homeowners and businesses we've served across Kenya.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial" data-animate>
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>Dema Plumbing responded to my burst pipe emergency at 2am within 45 minutes. Incredibly professional and had everything fixed before morning. Absolute lifesavers.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">JM</div>
+          <div>
+            <div class="author-name">James M.</div>
+            <div class="author-loc">Eldoret — Residential Client</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial" data-animate>
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>Used them for a full bathroom renovation — new pipes, fixtures, everything. The work was clean, on schedule, and the pricing was exactly what they quoted. Highly recommend.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">SA</div>
+          <div>
+            <div class="author-name">Sarah A.</div>
+            <div class="author-loc">Kisumu — Homeowner</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial" data-animate>
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>Our commercial property had a persistent drainage issue three other plumbers couldn't fix. Dema diagnosed and resolved it the same day. Outstanding team.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">RK</div>
+          <div>
+            <div class="author-name">Robert K.</div>
+            <div class="author-loc">Eldoret — Commercial Property Owner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact-grid" aria-labelledby="contact-heading">
+    <div class="contact-info">
+      <div class="section-label"><span>Get In Touch</span></div>
+      <h2 class="section-title" id="contact-heading">Request a Free Quote</h2>
+      <p class="section-sub" style="margin-bottom:2rem;">Describe your plumbing issue and we'll respond within the hour.</p>
+
+      <div class="contact-card" data-animate>
+        <div class="contact-card-header">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h4>Call Us Now</h4>
+        </div>
+        <div class="contact-value">+254 721 342 738</div>
+        <div class="contact-sub">Available 24/7 for emergencies</div>
+        <a href="tel:+254721342738" class="contact-card-btn">Call Now</a>
+      </div>
+
+      <div class="contact-card" data-animate>
+        <div class="contact-card-header">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <h4>WhatsApp</h4>
+        </div>
+        <div class="contact-value">+254 721 342 738</div>
+        <div class="contact-sub">Quick replies, anytime</div>
+        <a href="https://wa.me/254721342738" target="_blank" rel="noopener noreferrer" class="contact-card-btn whatsapp">Chat on WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div class="contact-form">
+      <form action="https://formsubmit.co/richardomondi19@gmail.com" method="POST" id="contactForm" novalidate>
+        <input type="hidden" name="_subject" value="New Quote Request — Dema Plumbing">
+        <input type="hidden" name="_captcha" value="false">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="home-first-name">First Name</label>
+            <input type="text" id="home-first-name" name="first_name" placeholder="John" required autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="home-last-name">Last Name</label>
+            <input type="text" id="home-last-name" name="last_name" placeholder="Doe" required autocomplete="family-name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="home-phone">Phone Number</label>
+          <input type="tel" id="home-phone" name="phone" placeholder="+254 712 345 678" required autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label for="home-email">Email Address</label>
+          <input type="email" id="home-email" name="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="home-service">Service Needed</label>
+          <select id="home-service" name="service" required>
+            <option value="" disabled selected>Select a service...</option>
+            <option>Leak Detection &amp; Repair</option>
+            <option>Drain Cleaning</option>
+            <option>Pipe Installation</option>
+            <option>Bathroom / Kitchen Fitting</option>
+            <option>Water Heater Service</option>
+            <option>Sewage &amp; Drainage</option>
+            <option>Water Pressure</option>
+            <option>Emergency Plumbing</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="home-message">Describe Your Issue</label>
+          <textarea id="home-message" name="message" placeholder="Tell us about your plumbing problem..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Request</button>
+        <div id="homeFormStatus" class="form-status" role="status" aria-live="polite" aria-atomic="true"></div>
+      </form>
+    </div>
+  </section>
+  </main>
+
   <!-- BACK TO TOP BUTTON -->
-  <button id="backToTop" aria-label="Back to top">↑</button>
+  <button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
 
   <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div>
         <div class="footer-logo">
-          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 4C20 4 12 8 12 16C12 20 14 22 14 22C14 22 12 24 12 28C12 32 16 36 20 36C24 36 28 32 28 28C28 24 26 22 26 22C26 22 28 20 28 16C28 8 20 4 20 4Z" fill="#1E4F91"/>
-            <path d="M20 8C20 8 15 10 15 16C15 18 16 20 16 20C16 20 15 21 15 24C15 27 17 30 20 30C23 30 25 27 25 24C25 21 24 20 24 20C24 20 25 18 25 16C25 10 20 8 20 8Z" fill="#3A7BD5"/>
-            <rect x="18" y="2" width="4" height="4" rx="1" fill="#1E4F91"/>
-            <path d="M20 2V6" stroke="#59C3C3" stroke-width="2" stroke-linecap="round"/>
-          </svg>
+          <img src="/images/logo/logo.svg" alt="Dema Plumbing Enterprise Logo" width="36" height="36">
           DEMA <span>PLUMBING</span> ENTERPRISE
         </div>
         <div class="footer-copy">Professional plumbing services for residential and commercial clients in Eldoret and across Kenya. Quality workmanship, transparent pricing, and 24/7 emergency support.</div>
@@ -882,6 +1008,38 @@
     </svg>
   </a>
 
-  <script src="/js/main.min.js" defer></script>
+  <script src="/js/main.js" defer></script>
+  <script>
+    // Home page contact form
+    const homeForm = document.getElementById('contactForm');
+    if (homeForm) {
+      homeForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const statusDiv = document.getElementById('homeFormStatus');
+        const submitBtn = homeForm.querySelector('.form-submit');
+        statusDiv.style.display = 'block';
+        statusDiv.className = 'form-status loading';
+        statusDiv.textContent = 'Sending your request...';
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        fetch(homeForm.action, { method: 'POST', body: new FormData(homeForm) })
+          .then(r => {
+            if (r.ok) {
+              statusDiv.className = 'form-status success';
+              statusDiv.textContent = 'Message sent! We\'ll be in touch within the hour.';
+              homeForm.reset();
+            } else { throw new Error(); }
+          })
+          .catch(() => {
+            statusDiv.className = 'form-status error';
+            statusDiv.textContent = 'Something went wrong. Please call us directly at +254 721 342 738.';
+          })
+          .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Request';
+          });
+      });
+    }
+  </script>
 </body>
 </html>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Dema Plumbing Enterprise logo">
+  <title>Dema Plumbing Enterprise</title>
+  <desc>Circular badge logo with faucet and water drop design</desc>
+
+  <!-- Clip path for waves -->
+  <clipPath id="innerCircleClip">
+    <circle cx="100" cy="100" r="86" />
+  </clipPath>
+
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="96" fill="none" stroke="#1E4F91" stroke-width="4"/>
+  <!-- Inner ring -->
+  <circle cx="100" cy="100" r="86" fill="none" stroke="#1E4F91" stroke-width="1.5"/>
+
+  <!-- Decorative dots on sides -->
+  <circle cx="9"  cy="100" r="3.5" fill="#1E4F91"/>
+  <circle cx="191" cy="100" r="3.5" fill="#1E4F91"/>
+
+  <!-- Paths for text -->
+  <defs>
+    <path id="topArc" d="M 22,100 A 78,78 0 0,1 178,100" fill="none" />
+    <path id="bottomArc" d="M 18,112 A 84,84 0 0,0 182,112" fill="none" />
+  </defs>
+
+  <!-- DEMA text arced along the top -->
+  <text font-family="'Inter', 'Arial', 'Helvetica', sans-serif" font-weight="900" font-size="28" fill="#1E4F91" letter-spacing="8">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">DEMA</textPath>
+  </text>
+
+  <!-- PLUMBING ENTERPRISE text arced along the bottom -->
+  <text font-family="'Inter', 'Arial', 'Helvetica', sans-serif" font-weight="700" font-size="11.5" fill="#1E4F91" letter-spacing="2.2">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">PLUMBING ENTERPRISE</textPath>
+  </text>
+
+  <!-- Clean modern water waves below the faucet (clipped inside the inner circle) -->
+  <g clip-path="url(#innerCircleClip)">
+    <!-- Bottom wave -->
+    <path d="M 10,165 Q 55,145 100,165 Q 145,185 190,165 L 190,200 L 10,200 Z" fill="#1E4F91" opacity="1.0" />
+    <!-- Top wave -->
+    <path d="M 10,152 Q 55,172 100,152 Q 145,132 190,152 L 190,200 L 10,200 Z" fill="#3A7BD5" opacity="0.85" />
+  </g>
+
+  <!-- Official Faucet Icon -->
+  <image href="data:image/png;base64,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" x="67.5" y="54.0" width="65.0" height="50.6" />
+
+  <!-- Single water droplet beneath the faucet spout nozzle -->
+  <path d="M 125.6,105.0 C 125.6,105.0 122.1,113 122.1,118.5 A 3.5,3.5 0 0 0 129.1,118.5 C 129.1,113 125.6,105.0 125.6,105.0 Z" fill="#3A7BD5" />
+</svg>

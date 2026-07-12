@@ -149,6 +149,21 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ----------------------------------------------------------
+     4b. DROPDOWN — tap to toggle on mobile
+  ---------------------------------------------------------- */
+  document.querySelectorAll('.nav-dropdown > a').forEach(function (trigger) {
+    trigger.addEventListener('click', function (e) {
+      if (window.matchMedia('(max-width: 968px)').matches) {
+        e.preventDefault();
+        const menu = trigger.nextElementSibling;
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+        trigger.setAttribute('aria-expanded', String(!isOpen));
+        if (menu) menu.classList.toggle('dropdown-open', !isOpen);
+      }
+    });
+  });
+
+  /* ----------------------------------------------------------
      5. SMOOTH SCROLL — internal anchor links
   ---------------------------------------------------------- */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
@@ -283,37 +298,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-// ============================================
-// Mobile Navigation — Hamburger Menu
-// ============================================
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.querySelector('.nav-toggle');
-  const links = document.querySelector('.nav-links');
-  const overlay = document.querySelector('.nav-overlay');
-  function closeMenu() {
-    links?.classList.remove('open');
-    overlay?.classList.remove('open');
-    toggle?.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-  if (toggle && links) {
-    toggle.addEventListener('click', () => {
-      const isOpen = links.classList.toggle('open');
-      overlay?.classList.toggle('open', isOpen);
-      toggle.setAttribute('aria-expanded', String(isOpen));
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-  }
-  overlay?.addEventListener('click', closeMenu);
-  document.querySelectorAll('.nav-dropdown > a').forEach((link) => {
-    link.addEventListener('click', (e) => {
-      if (window.innerWidth <= 968) {
-        e.preventDefault();
-        link.parentElement.classList.toggle('open');
-      }
-    });
-  });
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 968) closeMenu();
-  });
-});

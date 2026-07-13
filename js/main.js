@@ -90,7 +90,10 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleBtn();
 
     // Close menu when a link is clicked (SPA-style nav)
+    // Skip the .nav-dropdown trigger — it has its own tap-to-expand handler
     navLinks.querySelectorAll('a').forEach(a => {
+      const isDropdownTrigger = a.parentElement.classList.contains('nav-dropdown');
+      if (isDropdownTrigger) return;
       a.addEventListener('click', () => { if (!mq.matches) closeMenu(); });
     });
   })();

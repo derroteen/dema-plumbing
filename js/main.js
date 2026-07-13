@@ -301,3 +301,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+/* ----------------------------------------------------------
+   FEATURED PROJECTS — homepage preview, pulled from the same
+   gallery-data.js used by gallery.html (entries with featured: true)
+---------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', function () {
+  const grid = document.querySelector('.projects-section .projects-grid');
+  if (!grid || typeof window.galleryData === 'undefined') return;
+
+  const categoryLabels = {
+    'bathroom': 'Bathroom',
+    'kitchen': 'Kitchen',
+    'pipe': 'Pipe Installation',
+    'water-heater': 'Water Heater',
+    'drain': 'Drain Cleaning',
+    'emergency': 'Emergency',
+    'sewage': 'Sewage System'
+  };
+
+  const featured = window.galleryData.filter(function (p) { return p.featured; });
+  if (!featured.length) return;
+
+  grid.innerHTML = featured.map(function (project) {
+    const badge = categoryLabels[project.category] || project.category;
+    return (
+      '<div class="project-card">' +
+        '<div class="project-image">' +
+          '<img src="images/projects/' + project.image + '" alt="' + project.title + '" loading="lazy">' +
+        '</div>' +
+        '<div class="project-content">' +
+          '<span class="project-badge">' + badge + '</span>' +
+          '<h4>' + project.title + '</h4>' +
+          '<p>' + project.description + '</p>' +
+        '</div>' +
+      '</div>'
+    );
+  }).join('');
+});

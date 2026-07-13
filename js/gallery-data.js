@@ -167,5 +167,65 @@ window.galleryData = [
     completionDate: "2026-04-30",
     image: "water-tanks/septic-tank-installation-1.webp",
     featured: false
+  },
+  {
+    id: 17,
+    title: "Elevated Water Storage Tower Installation",
+    description: "Construction of an elevated steel water storage tower for a residential property with poultry-keeping facilities, providing reliable gravity-fed water supply.",
+    category: "pipe",
+    location: "Nandi Hills, Nandi County",
+    completionDate: "2026-03-25",
+    image: "water-tanks/water-tower-installation-2.webp",
+    featured: false
+  },
+  {
+    id: 18,
+    title: "Toilet Installation",
+    description: "Installation of a water-efficient toilet fixture with proper drainage connection as part of a bathroom fit-out.",
+    category: "bathroom",
+    location: "Eldoret, Uasin Gishu County",
+    completionDate: "2026-02-14",
+    image: "bathroom-installations/toilet-installation-1.webp",
+    featured: false
+  },
+  {
+    id: 19,
+    title: "Kitchen Sink Installation",
+    description: "Installation of a stainless steel double-basin kitchen sink with mixer tap on a granite countertop, including supply and drainage connections.",
+    category: "kitchen",
+    location: "Kisumu, Kisumu County",
+    completionDate: "2026-05-08",
+    image: "kitchen-plumbing/kitchen-sink-installation-1.webp",
+    featured: false
+  },
+  {
+    id: 20,
+    title: "School Laboratory Sink Installation",
+    description: "Installation of multiple laboratory sink stations with individual gooseneck taps for a school science laboratory.",
+    category: "pipe",
+    location: "Kapsabet, Nandi County",
+    completionDate: "2026-01-20",
+    image: "commercial/school-lab-sink-installation-1.webp",
+    featured: false
+  },
+  {
+    id: 21,
+    title: "Pedestal Sink Installation",
+    description: "Installation of a pedestal bathroom sink with chrome mixer tap as part of a bathroom renovation.",
+    category: "bathroom",
+    location: "Migori, Migori County",
+    completionDate: "2026-04-11",
+    image: "bathroom-installations/pedestal-sink-installation-1.webp",
+    featured: true
+  },
+  {
+    id: 22,
+    title: "Commercial Rough-In Plumbing",
+    description: "First-fix plumbing rough-in for a large commercial construction project, including drainage stub-outs across the roof slab ahead of the concrete pour.",
+    category: "pipe",
+    location: "Eldoret, Uasin Gishu County",
+    completionDate: "2026-06-05",
+    image: "commercial/commercial-rough-in-plumbing-1.webp",
+    featured: false
   }
 ];

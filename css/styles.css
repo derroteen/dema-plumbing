@@ -2090,6 +2090,7 @@ nav {
 
 @media (max-width: 968px) {
   .mobile-menu-btn { display: flex; }
+  nav { padding: 1rem 4%; }
   .nav-links {
     position: fixed;
     top: 0;

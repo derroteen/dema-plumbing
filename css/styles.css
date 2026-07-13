@@ -103,10 +103,9 @@ nav.scrolled {
 .logo {
   font-family: 'Inter', sans-serif;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 0.25rem;
-  min-width: 180px;
+  gap: 0.5rem;
 }
 .logo svg {
   width: 56px;

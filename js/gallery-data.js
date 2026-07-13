@@ -97,5 +97,75 @@ window.galleryData = [
     completionDate: "2026-06-18",
     image: "water-heaters/water-heater-turbo-1.webp",
     featured: false
+  },
+  {
+    id: 10,
+    title: "Bathroom Vanity Cabinet Installation",
+    description: "Installation of a custom vanity cabinet with integrated bathtub during a full bathroom renovation, including plumbing rough-in for sink and tub connections.",
+    category: "bathroom",
+    location: "Eldoret, Uasin Gishu County",
+    completionDate: "2026-04-22",
+    image: "bathroom-installations/bathroom-vanity-cabinet-install-1.webp",
+    featured: false
+  },
+  {
+    id: 11,
+    title: "Rainfall Shower Fixture Installation",
+    description: "Installation of a rainfall showerhead with handheld shower attachment and thermostatic mixer valve for a bathroom upgrade.",
+    category: "bathroom",
+    location: "Kisumu, Kisumu County",
+    completionDate: "2026-05-12",
+    image: "bathroom-installations/rainfall-shower-fixture-install-1.webp",
+    featured: false
+  },
+  {
+    id: 12,
+    title: "Institutional Restroom Fit-Out",
+    description: "Plumbing fixture installation for a commercial restroom, including wall-mounted sinks and toilet as part of a facility renovation.",
+    category: "bathroom",
+    location: "Kisii, Kisii County",
+    completionDate: "2026-03-18",
+    image: "commercial/institutional-restroom-fitout-1.webp",
+    featured: false
+  },
+  {
+    id: 13,
+    title: "Underground Drainage Pipework",
+    description: "Installation of underground PVC drainage and supply pipework for a new residential construction, including junction fittings and pipe routing through the foundation wall.",
+    category: "pipe",
+    location: "Siaya, Siaya County",
+    completionDate: "2026-02-08",
+    image: "residential/underground-drainage-pipework-1.webp",
+    featured: false
+  },
+  {
+    id: 14,
+    title: "Solar Water Heater Installation",
+    description: "Installation of a Synnova solar water heating system on a natural stone residential roof, including roof mounting and pipe connections.",
+    category: "water-heater",
+    location: "Kapsabet, Nandi County",
+    completionDate: "2026-06-02",
+    image: "water-heaters/water-heater-stone-house-install-1.webp",
+    featured: false
+  },
+  {
+    id: 15,
+    title: "Elevated Water Storage Tower Installation",
+    description: "Construction and installation of an elevated steel water storage tower with tank platform, providing gravity-fed water supply for a residential property.",
+    category: "pipe",
+    location: "Eldoret, Uasin Gishu County",
+    completionDate: "2026-01-15",
+    image: "water-tanks/water-tower-installation-1.webp",
+    featured: false
+  },
+  {
+    id: 16,
+    title: "Underground Septic Tank Installation",
+    description: "Installation of an underground septic/biodigester tank system for residential wastewater management, including excavation and tank placement.",
+    category: "sewage",
+    location: "Homa Bay, Homa Bay County",
+    completionDate: "2026-04-30",
+    image: "water-tanks/septic-tank-installation-1.webp",
+    featured: false
   }
 ];

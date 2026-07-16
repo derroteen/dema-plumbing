@@ -1,5 +1,5 @@
 /**
- * Dema Plumbing Enterprise - Projects Data
+ * Dema Plumbing and Pipe Fitting Eldoret - Projects Data
  * 
  * To add a new project:
  * 1. Create a new folder inside images/projects/ (e.g., images/projects/bathroom-installation-eldoret/)

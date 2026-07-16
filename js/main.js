@@ -90,10 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleBtn();
 
     // Close menu when a link is clicked (SPA-style nav)
-    // Skip the .nav-dropdown trigger — it has its own tap-to-expand handler
     navLinks.querySelectorAll('a').forEach(a => {
-      const isDropdownTrigger = a.parentElement.classList.contains('nav-dropdown');
-      if (isDropdownTrigger) return;
       a.addEventListener('click', () => { if (!mq.matches) closeMenu(); });
     });
   })();
@@ -148,21 +145,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Close when focus leaves the dropdown
     dropdown.addEventListener('focusout', function (e) {
       if (!dropdown.contains(e.relatedTarget)) closeDropdown();
-    });
-  });
-
-  /* ----------------------------------------------------------
-     4b. DROPDOWN — tap to toggle on mobile
-  ---------------------------------------------------------- */
-  document.querySelectorAll('.nav-dropdown > a').forEach(function (trigger) {
-    trigger.addEventListener('click', function (e) {
-      if (window.matchMedia('(max-width: 968px)').matches) {
-        e.preventDefault();
-        const menu = trigger.nextElementSibling;
-        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-        trigger.setAttribute('aria-expanded', String(!isOpen));
-        if (menu) menu.classList.toggle('dropdown-open', !isOpen);
-      }
     });
   });
 
@@ -299,42 +281,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-});
-
-/* ----------------------------------------------------------
-   FEATURED PROJECTS — homepage preview, pulled from the same
-   gallery-data.js used by gallery.html (entries with featured: true)
----------------------------------------------------------- */
-document.addEventListener('DOMContentLoaded', function () {
-  const grid = document.querySelector('.projects-section .projects-grid');
-  if (!grid || typeof window.galleryData === 'undefined') return;
-
-  const categoryLabels = {
-    'bathroom': 'Bathroom',
-    'kitchen': 'Kitchen',
-    'pipe': 'Pipe Installation',
-    'water-heater': 'Water Heater',
-    'drain': 'Drain Cleaning',
-    'emergency': 'Emergency',
-    'sewage': 'Sewage System'
-  };
-
-  const featured = window.galleryData.filter(function (p) { return p.featured; });
-  if (!featured.length) return;
-
-  grid.innerHTML = featured.map(function (project) {
-    const badge = categoryLabels[project.category] || project.category;
-    return (
-      '<div class="project-card">' +
-        '<div class="project-image">' +
-          '<img src="images/projects/' + project.image + '" alt="' + project.title + '" loading="lazy">' +
-        '</div>' +
-        '<div class="project-content">' +
-          '<span class="project-badge">' + badge + '</span>' +
-          '<h4>' + project.title + '</h4>' +
-          '<p>' + project.description + '</p>' +
-        '</div>' +
-      '</div>'
-    );
-  }).join('');
 });

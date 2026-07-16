@@ -1,0 +1,1317 @@
+diff --git a/css/styles.css b/css/styles.css
+index 13dd5ec..ae6048f 100644
+--- a/css/styles.css
++++ b/css/styles.css
+@@ -111,12 +111,6 @@ nav.scrolled {
+   width: 56px;
+   height: 56px;
+ }
+-.logo-text {
+-  display: flex;
+-  flex-direction: column;
+-  align-items: center;
+-  line-height: 1.1;
+-}
+ .logo-dema {
+   font-size: 1.75rem;
+   font-weight: 800;
+diff --git a/gallery.html b/gallery.html
+deleted file mode 100644
+index e52ce6d..0000000
+--- a/gallery.html
++++ /dev/null
+@@ -1,479 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="en">
+-<head>
+-  <!-- Basic SEO -->
+-  <meta charset="UTF-8" />
+-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+-  <title>Project Gallery - Dema Plumbing and Pipe Fitting Eldoret | Our Completed Work</title>
+-  <meta name="description" content="View Dema Plumbing and Pipe Fitting Eldoret's completed projects including bathroom renovations, kitchen installations, pipe systems, water heaters, and emergency repairs in Eldoret, Kenya.">
+-  <meta name="keywords" content="plumbing gallery, bathroom renovation, kitchen fitting, pipe installation, water heater installation, drainage system, emergency plumbing, Eldoret plumbing projects">
+-  <link rel="canonical" href="https://demaplumbingeld.co.ke/gallery.html">
+-  
+-  <!-- Open Graph -->
+-  <meta property="og:title" content="Project Gallery - Dema Plumbing"/>
+-  <meta property="og:description" content="View our completed plumbing projects including bathroom renovations, kitchen installations, pipe systems, and more in Eldoret, Kenya."/>
+-  <meta property="og:image" content="https://demaplumbingeld.co.ke/assets/images/projects/bathroom1.jpg"/>
+-  <meta property="og:url" content="https://demaplumbingeld.co.ke/gallery.html"/>
+-  <meta property="og:type" content="website"/>
+-  
+-  <!-- Twitter Cards -->
+-  <meta name="twitter:card" content="summary_large_image">
+-  <meta name="twitter:title" content="Project Gallery - Dema Plumbing">
+-  <meta name="twitter:description" content="View our completed plumbing projects including bathroom renovations, kitchen installations, pipe systems, and more in Eldoret, Kenya.">
+-  <meta name="twitter:image" content="https://demaplumbingeld.co.ke/assets/images/projects/bathroom1.jpg">
+-  
+-  <!-- Structured Data (Local Business) -->
+-    <script type="application/ld+json">
+-  {
+-    "@context": "https://schema.org",
+-    "@type": "Plumber",
+-    "name": "Dema Plumbing and Pipe Fitting Eldoret",
+-    "image": "https://demaplumbingeld.co.ke/images/logo/logo.png",
+-    "url": "https://demaplumbingeld.co.ke/gallery.html",
+-    "telephone": "+254721342738",
+-    "email": "demaplumbingenterprise@gmail.com",
+-    "priceRange": "}",
+-    "address": {
+-      "@type": "PostalAddress",
+-      "addressLocality": "Eldoret",
+-      "addressRegion": "Uasin Gishu",
+-      "addressCountry": "KE"
+-    },
+-    "openingHoursSpecification": [
+-      {
+-        "@type": "OpeningHoursSpecification",
+-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+-        "opens": "07:00",
+-        "closes": "19:00"
+-      },
+-      {
+-        "@type": "OpeningHoursSpecification",
+-        "dayOfWeek": "Sunday",
+-        "opens": "08:00",
+-        "closes": "17:00"
+-      }
+-    ],
+-    "areaServed": ["Eldoret","Uasin Gishu","Kisumu","Kisii","Homa Bay","Migori","Siaya","Kapsabet","Nandi","Turbo"]
+-  }
+-  </script>
+-  
+-  <meta name="theme-color" content="#1E4F91">
+-  <!-- Preconnect & Preload -->
+-  <link rel="preconnect" href="https://fonts.googleapis.com">
+-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+-  <!-- Manifest & Icons -->
+-  <link rel="manifest" href="/manifest.json">
+-  <link rel="icon" href="/images/icons/favicon.svg" type="image/svg+xml">
+-  <link rel="icon" href="/images/icons/favicon-32x32.svg" sizes="32x32" type="image/svg+xml">
+-  <link rel="icon" href="/images/icons/favicon-16x16.svg" sizes="16x16" type="image/svg+xml">
+-  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.svg">
+-  <!-- CSS -->
+-  <link rel="stylesheet" href="/css/styles.css" media="all">
+-</head>
+-<body>
+-  <!-- Top Bar -->
+-  <div class="top-bar">
+-    <div class="top-bar-left">
+-      <div class="top-bar-item">
+-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+-          <circle cx="12" cy="10" r="3"/>
+-        </svg>
+-        <span>Eldoret, Kenya</span>
+-      </div>
+-      <div class="top-bar-item">
+-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+-          <polyline points="22,6 12,13 2,6"/>
+-        </svg>
+-        <span>richardomondi19@gmail.com</span>
+-      </div>
+-      <div class="top-bar-item">
+-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+-        </svg>
+-        <span>+254 721 342 738</span>
+-      </div>
+-      <div class="top-bar-item">
+-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+-          <circle cx="12" cy="12" r="10"/>
+-          <polyline points="12 6 12 12 16 14"/>
+-        </svg>
+-        <span>Mon-Sat: 7AM-7PM | Sun: 8AM-5PM</span>
+-      </div>
+-    </div>
+-    <div class="top-bar-right">
+-      <div class="top-bar-social">
+-        <a href="https://facebook.com/demaplumbing" target="_blank" aria-label="Facebook">
+-          <svg viewBox="0 0 24 24" fill="currentColor">
+-            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+-          </svg>
+-        </a>
+-        <a href="https://wa.me/254721342738" target="_blank" aria-label="WhatsApp">
+-          <svg viewBox="0 0 24 24" fill="currentColor">
+-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.854-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.P157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+-          </svg>
+-        </a>
+-      </div>
+-    </div>
+-  </div>
+-
+-  <!-- NAV -->
+-  <nav>
+-    <div class="logo">
+-      <img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="40" height="40">
+-      DEMA<span>.</span>
+-    </div>
+-    <ul class="nav-links">
+-      <li><a href="/index.html">Home</a></li>
+-      <li><a href="/about/index.html">About</a></li>
+-      <li class="nav-dropdown">
+-        <a href="/services/index.html">
+-          Services
+-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+-            <polyline points="6 9 12 15 18 9"/>
+-          </svg>
+-        </a>
+-        <div class="dropdown-menu">
+-          <a href="/services/index.html">All Services</a>
+-          <a href="/services/leak-detection/index.html">Leak Detection</a>
+-          <a href="/services/drain-cleaning/index.html">Drain Cleaning</a>
+-          <a href="/services/pipe-installation/index.html">Pipe Installation</a>
+-          <a href="/services/emergency-plumbing/index.html">Emergency Plumbing</a>
+-        </div>
+-      </li>
+-      <li><a href="/gallery.html" class="active">Projects</a></li>
+-      <li><a href="/contact/index.html">Contact</a></li>
+-    </ul>
+-    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+-  </nav>
+-
+-  <!-- HERO -->
+-  <section class="hero" id="gallery">
+-    <div class="hero-text">
+-      <div class="hero-badge">
+-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+-          <circle cx="8.5" cy="8.5" r="1.5"/>
+-          <polyline points="21 15 16 10 5 21"/>
+-        </svg>
+-        Project Gallery
+-      </div>
+-      <h1>Our Completed Projects</h1>
+-      <p>Explore our high-quality plumbing work across residential and commercial properties in Eldoret and throughout Kenya.</p>
+-      <div class="hero-btns">
+-        <a href="#gallery-section" class="btn-primary">View All Projects</a>
+-      </div>
+-    </div>
+-  </section>
+-
+-  <!-- GALLERY SECTION -->
+-  <section id="gallery-section" class="gallery-section">
+-    <div class="section-label"><span>Our Work</span></div>
+-    <h2 class="section-title">Project Gallery</h2>
+-    <p class="section-sub">Browse through our portfolio of completed plumbing projects. Filter by category to find specific types of work.</p>
+-    
+-    <!-- Category Filters -->
+-    <div class="gallery-filters">
+-      <button class="filter-btn active" data-filter="all">All Projects</button>
+-      <button class="filter-btn" data-filter="bathroom">Bathroom</button>
+-      <button class="filter-btn" data-filter="kitchen">Kitchen</button>
+-      <button class="filter-btn" data-filter="pipe">Pipe Installation</button>
+-      <button class="filter-btn" data-filter="water-heater">Water Heater</button>
+-      <button class="filter-btn" data-filter="drain">Drain Cleaning</button>
+-      <button class="filter-btn" data-filter="emergency">Emergency</button>
+-      <button class="filter-btn" data-filter="sewage">Sewage</button>
+-    </div>
+-    
+-    <!-- Gallery Grid -->
+-    <div class="gallery-grid" id="gallery-grid">
+-      <!-- Gallery items will be generated dynamically -->
+-    </div>
+-  </section>
+-
+-  <!-- LIGHTBOX -->
+-  <div id="lightbox" class="lightbox">
+-    <div class="lightbox-content">
+-      <button class="lightbox-close" aria-label="Close lightbox">
+-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+-          <line x1="18" y1="6" x2="6" y2="18"/>
+-          <line x1="6" y1="6" x2="18" y2="18"/>
+-        </svg>
+-      </button>
+-      <div class="lightbox-image-container">
+-        <img class="lightbox-img" src="" alt="Project image"/>
+-      </div>
+-      <div class="lightbox-info">
+-        <h3 class="lightbox-title"></h3>
+-        <p class="lightbox-description"></p>
+-        <div class="lightbox-meta">
+-          <span class="lightbox-category"></span>
+-          <span class="lightbox-location"></span>
+-          <span class="lightbox-date"></span>
+-        </div>
+-      </div>
+-      <button class="lightbox-prev" aria-label="Previous image">
+-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+-          <polyline points="15 18 9 12 15 6"/>
+-        </svg>
+-      </button>
+-      <button class="lightbox-next" aria-label="Next image">
+-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+-          <polyline points="9 18 15 12 9 6"/>
+-        </svg>
+-      </button>
+-    </div>
+-  </div>
+-
+-  <!-- WhatsApp FAB -->
+-  <a href="https://wa.me/254721342738" class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
+-    <svg viewBox="0 0 24 24" fill="currentColor">
+-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.P157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+-    </svg>
+-  </a>
+-
+-  <!-- FOOTER -->
+-  <footer>
+-    <div class="footer-grid">
+-      <div>
+-        <div class="footer-logo">
+-          <img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">
+-          DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET
+-        </div>
+-        <div class="footer-copy">Professional plumbing services for residential and commercial clients in Eldoret and across Kenya. Quality workmanship, transparent pricing, and 24/7 emergency support.</div>
+-        <div class="footer-social">
+-          <a href="https://facebook.com/demaplumbing" target="_blank" aria-label="Facebook">
+-            <svg viewBox="0 0 24 24" fill="currentColor">
+-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+-            </svg>
+-          </a>
+-          <a href="https://wa.me/254721342738" target="_blank" aria-label="WhatsApp">
+-            <svg viewBox="0 0 24 24" fill="currentColor">
+-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.P157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+-            </svg>
+-          </a>
+-          <a href="tel:+254721342738" aria-label="Call Us">
+-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+-            </svg>
+-          </a>
+-          <a href="mailto:richardomondi19@gmail.com" aria-label="Email Us">
+-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+-              <polyline points="22,6 12,13 2,6"/>
+-            </svg>
+-          </a>
+-        </div>
+-      </div>
+-      <div class="footer-links">
+-        <h4>Quick Links</h4>
+-        <a href="/index.html">Home</a>
+-        <a href="/about/index.html">About Us</a>
+-        <a href="/services/index.html">Services</a>
+-        <a href="/gallery.html">Gallery</a>
+-        <a href="/contact/index.html">Contact</a>
+-      </div>
+-      <div class="footer-links">
+-        <h4>Our Services</h4>
+-        <a href="/services/leak-detection/index.html">Leak Detection</a>
+-        <a href="/services/drain-cleaning/index.html">Drain Cleaning</a>
+-        <a href="/services/pipe-installation/index.html">Pipe Installation</a>
+-        <a href="/services/emergency-plumbing/index.html">Emergency Plumbing</a>
+-        <a href="/services/bathroom-fitting/index.html">Bathroom Fitting</a>
+-      </div>
+-      <div class="footer-links">
+-        <h4>Contact Info</h4>
+-        <a href="tel:+254721342738">+254 721 342 738</a>
+-        <a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a>
+-        <div class="footer-working-hours">
+-          <p><strong>Mon - Sat:</strong> 7:00 AM - 7:00 PM</p>
+-          <p><strong>Sunday:</strong> 8:00 AM - 5:00 PM</p>
+-          <p><strong>Emergency:</strong> 24/7 Available</p>
+-        </div>
+-      </div>
+-    </div>
+-    <div class="footer-bottom">
+-      <p>© 2026 Dema Plumbing and Pipe Fitting Eldoret. All rights reserved. | Serving Eldoret and Uasin Gishu County</p>
+-    </div>
+-  </footer>
+-
+-  <!-- JS -->
+-  <script src="/js/gallery-data.js"></script>
+-  <script>
+-    // Gallery functionality
+-    document.addEventListener('DOMContentLoaded', () => {
+-      const galleryGrid = document.getElementById('gallery-grid');
+-      const lightbox = document.getElementById('lightbox');
+-      const lightboxImg = document.querySelector('.lightbox-img');
+-      const lightboxTitle = document.querySelector('.lightbox-title');
+-      const lightboxDescription = document.querySelector('.lightbox-description');
+-      const lightboxCategory = document.querySelector('.lightbox-category');
+-      const lightboxLocation = document.querySelector('.lightbox-location');
+-      const lightboxDate = document.querySelector('.lightbox-date');
+-      const closeBtn = document.querySelector('.lightbox-close');
+-      const prevBtn = document.querySelector('.lightbox-prev');
+-      const nextBtn = document.querySelector('.lightbox-next');
+-      const filterBtns = document.querySelectorAll('.filter-btn');
+-      
+-      let currentFilter = 'all';
+-      let currentImageIndex = 0;
+-      let filteredProjects = [];
+-      
+-      // Format date for display
+-      function formatDate(dateString) {
+-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+-        return new Date(dateString).toLocaleDateString('en-US', options);
+-      }
+-      
+-      // Get category display name
+-      function getCategoryName(category) {
+-        const names = {
+-          'bathroom': 'Bathroom',
+-          'kitchen': 'Kitchen',
+-          'pipe': 'Pipe Installation',
+-          'water-heater': 'Water Heater',
+-          'drain': 'Drain Cleaning',
+-          'emergency': 'Emergency',
+-          'sewage': 'Sewage System'
+-        };
+-        return names[category] || category;
+-      }
+-      
+-      // Generate gallery items
+-      function renderGallery(filter = 'all') {
+-        galleryGrid.innerHTML = '';
+-        
+-        filteredProjects = filter === 'all' 
+-          ? window.galleryData 
+-          : window.galleryData.filter(item => item.category === filter);
+-        
+-        if (filteredProjects.length === 0) {
+-          galleryGrid.innerHTML = '<p class="no-projects">No projects found in this category.</p>';
+-          return;
+-        }
+-        
+-        filteredProjects.forEach((project, index) => {
+-          const card = document.createElement('div');
+-          card.className = 'gallery-card';
+-          card.dataset.index = index;
+-          
+-          const imageContainer = document.createElement('div');
+-          imageContainer.className = 'gallery-image-container';
+-          
+-          const img = document.createElement('img');
+-          img.src = `/assets/images/projects/${project.image}`;
+-          img.alt = project.title;
+-          img.loading = 'lazy';
+-          img.decoding = 'async';
+-          
+-          const featuredBadge = project.featured 
+-            ? '<div class="gallery-featured">Featured</div>' 
+-            : '';
+-          
+-          const overlay = document.createElement('div');
+-          overlay.className = 'gallery-overlay';
+-          overlay.innerHTML = `
+-            <h3>${project.title}</h3>
+-            <p>${project.description.substring(0, 80)}...</p>
+-            <span class="gallery-view-btn">View Details</span>
+-          `;
+-          
+-          imageContainer.appendChild(img);
+-          imageContainer.innerHTML += featuredBadge;
+-          card.appendChild(imageContainer);
+-          card.appendChild(overlay);
+-          
+-          card.addEventListener('click', () => openLightbox(index));
+-          
+-          galleryGrid.appendChild(card);
+-        });
+-        
+-        // Add animation class after a small delay
+-        setTimeout(() => {
+-          document.querySelectorAll('.gallery-card').forEach((card, i) => {
+-            card.style.animationDelay = `${i * 0.1}s`;
+-            card.classList.add('animate-in');
+-          });
+-        }, 50);
+-      }
+-      
+-      // Open lightbox
+-      function openLightbox(index) {
+-        currentImageIndex = index;
+-        const project = filteredProjects[index];
+-        
+-        lightboxImg.src = `/assets/images/projects/${project.image}`;
+-        lightboxTitle.textContent = project.title;
+-        lightboxDescription.textContent = project.description;
+-        lightboxCategory.textContent = getCategoryName(project.category);
+-        lightboxLocation.textContent = project.location;
+-        lightboxDate.textContent = formatDate(project.completionDate);
+-        
+-        lightbox.classList.add('active');
+-        document.body.style.overflow = 'hidden';
+-      }
+-      
+-      // Close lightbox
+-      function closeLightbox() {
+-        lightbox.classList.remove('active');
+-        document.body.style.overflow = '';
+-        setTimeout(() => {
+-          lightboxImg.src = '';
+-        }, 300);
+-      }
+-      
+-      // Navigate lightbox
+-      function navigateLightbox(direction) {
+-        currentImageIndex += direction;
+-        
+-        if (currentImageIndex < 0) {
+-          currentImageIndex = filteredProjects.length - 1;
+-        } else if (currentImageIndex >= filteredProjects.length) {
+-          currentImageIndex = 0;
+-        }
+-        
+-        openLightbox(currentImageIndex);
+-      }
+-      
+-      // Event listeners
+-      closeBtn.addEventListener('click', closeLightbox);
+-      prevBtn.addEventListener('click', () => navigateLightbox(-1));
+-      nextBtn.addEventListener('click', () => navigateLightbox(1));
+-      
+-      lightbox.addEventListener('click', (e) => {
+-        if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+-          closeLightbox();
+-        }
+-      });
+-      
+-      // Keyboard navigation
+-      document.addEventListener('keydown', (e) => {
+-        if (!lightbox.classList.contains('active')) return;
+-        
+-        if (e.key === 'Escape') closeLightbox();
+-        if (e.key === 'ArrowLeft') navigateLightbox(-1);
+-        if (e.key === 'ArrowRight') navigateLightbox(1);
+-      });
+-      
+-      // Filter buttons
+-      filterBtns.forEach(btn => {
+-        btn.addEventListener('click', () => {
+-          filterBtns.forEach(b => b.classList.remove('active'));
+-          btn.classList.add('active');
+-          currentFilter = btn.dataset.filter;
+-          renderGallery(currentFilter);
+-        });
+-      });
+-      
+-      // Initial render
+-      if (window.galleryData) {
+-        renderGallery();
+-      } else {
+-        galleryGrid.innerHTML = '<p class="no-projects">Loading projects...</p>';
+-      }
+-    });
+-  </script>
+-</body>
+-</html>
+\ No newline at end of file
+diff --git a/gallery/index.html b/gallery/index.html
+index a368a29..c62b7f0 100644
+--- a/gallery/index.html
++++ b/gallery/index.html
+@@ -12,7 +12,7 @@
+   <!-- Open Graph -->
+   <meta property="og:title" content="Project Gallery - Dema Plumbing"/>
+   <meta property="og:description" content="View our completed plumbing projects including bathroom renovations, kitchen installations, pipe systems, and more in Eldoret, Kenya."/>
+-  <meta property="og:image" content="https://www.demaplumbingeld.co.ke/images/projects/bathroom1.jpg"/>
++  <meta property="og:image" content="https://www.demaplumbingeld.co.ke/images/projects/bathroom-installations/bathroom-kisii-1.webp"/>
+   <meta property="og:url" content="https://www.demaplumbingeld.co.ke/gallery/"/>
+   <meta property="og:type" content="website"/>
+   
+@@ -20,7 +20,7 @@
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="Project Gallery - Dema Plumbing">
+   <meta name="twitter:description" content="View our completed plumbing projects including bathroom renovations, kitchen installations, pipe systems, and more in Eldoret, Kenya.">
+-  <meta name="twitter:image" content="https://www.demaplumbingeld.co.ke/images/projects/bathroom1.jpg">
++  <meta name="twitter:image" content="https://www.demaplumbingeld.co.ke/images/projects/bathroom-installations/bathroom-kisii-1.webp">
+   
+   <!-- Structured Data (Local Business) -->
+     <script type="application/ld+json">
+diff --git a/js/gallery-data.js b/js/gallery-data.js
+index 7e1d0db..8909311 100644
+--- a/js/gallery-data.js
++++ b/js/gallery-data.js
+@@ -1,6 +1,6 @@
+ /**
+  * Dema Plumbing Gallery Data
+- * 
++ *
+  * To add new gallery items, simply add a new object to the array.
+  * Each item should have:
+  *  - id: unique identifier (number)
+@@ -9,94 +9,234 @@
+  *  - category: project category (e.g., "bathroom", "kitchen", "pipe", "emergency")
+  *  - location: project location
+  *  - completionDate: completion date (YYYY-MM-DD format)
+- *  - image: filename (e.g., "bathroom1.jpg")
++ *  - image: relative path under images/projects/ (e.g., "water-heaters/water-heater-eldoret-1.webp")
+  *  - featured: true/false for featured projects
+- * 
++ *
+  * To add a new project:
+- * 1. Copy your image to /assets/images/projects/
++ * 1. Copy your image to /images/projects/<category-folder>/
+  * 2. Add one object below with your image filename
+  * 3. Push to GitHub - that's it!
+  */
+ window.galleryData = [
+   {
+     id: 1,
+-    title: "Bathroom Renovation",
+-    description: "Complete bathroom installation with modern fixtures and premium fittings in a residential property.",
+-    category: "bathroom",
+-    location: "Eldoret",
+-    completionDate: "2024-03-15",
+-    image: "bathroom1.jpg",
++    title: "Solar Water Heater Installation",
++    description: "Supply and installation of a high-pressure stainless steel solar water heating system with vacuum tube collector array and roof mounting frame for a residential property.",
++    category: "water-heater",
++    location: "Eldoret, Uasin Gishu County",
++    completionDate: "2026-02-14",
++    image: "water-heaters/water-heater-eldoret-1.webp",
+     featured: true
+   },
+   {
+     id: 2,
+-    title: "Kitchen Fitting",
+-    description: "Modern kitchen plumbing installation with sink, dishwasher connection, and garbage disposal.",
+-    category: "kitchen",
+-    location: "Eldoret",
+-    completionDate: "2024-02-20",
+-    image: "kitchen1.jpg",
+-    featured: true
++    title: "Synnova Solar Heater Installation",
++    description: "Full installation of a Synnova pressurized solar water heater on a natural stone residential home, including roof mounting, plumbing connections, and pressure testing.",
++    category: "water-heater",
++    location: "Kapsabet, Nandi County",
++    completionDate: "2026-03-22",
++    image: "water-heaters/water-heater-kapsabet-1.webp",
++    featured: false
+   },
+   {
+     id: 3,
+-    title: "Pipe Installation",
+-    description: "New copper pipe system installation for a residential property with full water distribution network.",
+-    category: "pipe",
+-    location: "Eldoret",
+-    completionDate: "2024-01-10",
+-    image: "pipe1.jpg",
++    title: "Solar Water Heater Installation",
++    description: "Installation of a vacuum tube solar water heating system for a residential home bordering a tea estate, with collector alignment for optimal sun exposure.",
++    category: "water-heater",
++    location: "Kericho, Kericho County",
++    completionDate: "2026-01-30",
++    image: "water-heaters/water-heater-kericho-1.webp",
+     featured: false
+   },
+   {
+     id: 4,
+-    title: "Water Heater Install",
+-    description: "Energy-efficient tankless water heater installation with proper venting and safety features.",
+-    category: "water-heater",
+-    location: "Eldoret",
+-    completionDate: "2024-04-05",
+-    image: "tank1.jpg",
+-    featured: true
++    title: "Rough-In Plumbing - New Construction",
++    description: "First-fix plumbing works for a new residential build, including drainage stub-outs and supply line rough-in ahead of the roof slab concrete pour.",
++    category: "pipe",
++    location: "Kisumu, Kisumu County",
++    completionDate: "2026-04-10",
++    image: "residential/pipe-installation-kisumu-1.webp",
++    featured: false
+   },
+   {
+     id: 5,
+-    title: "Drain Cleaning",
+-    description: "Professional drain cleaning service using hydro-jetting technology for commercial building.",
+-    category: "drain",
+-    location: "Eldoret",
+-    completionDate: "2024-02-28",
+-    image: "drain1.jpg",
+-    featured: false
++    title: "Luxury Bathroom Renovation",
++    description: "Complete bathroom fit-out featuring black marble herringbone wall tiling, a wall-hung water-efficient toilet, and concealed cistern plumbing.",
++    category: "bathroom",
++    location: "Kisii, Kisii County",
++    completionDate: "2026-05-05",
++    image: "bathroom-installations/bathroom-kisii-1.webp",
++    featured: true
+   },
+   {
+     id: 6,
+-    title: "Emergency Service",
+-    description: "24/7 burst pipe repair and water damage mitigation for residential client.",
+-    category: "emergency",
+-    location: "Eldoret",
+-    completionDate: "2024-03-01",
+-    image: "emergency1.jpg",
+-    featured: true
++    title: "Modern Vanity & Basin Installation",
++    description: "Supply and fitting of a modern countertop vessel basin with tall chrome mixer tap and matching mirrored cabinet for a residential bathroom upgrade.",
++    category: "bathroom",
++    location: "Migori, Migori County",
++    completionDate: "2026-03-02",
++    image: "bathroom-installations/bathroom-vanity-migori-1.webp",
++    featured: false
+   },
+   {
+     id: 7,
+-    title: "Sewage System",
+-    description: "Complete sewage line replacement and new drainage system for apartment complex.",
+-    category: "sewage",
+-    location: "Eldoret",
+-    completionDate: "2024-01-25",
+-    image: "sewage1.jpg",
++    title: "Institutional Urinal Installation",
++    description: "Installation of a multi-bay urinal system with individual water supply valves and shared drainage line for an institutional facility.",
++    category: "bathroom",
++    location: "Homa Bay, Homa Bay County",
++    completionDate: "2026-02-28",
++    image: "commercial/bathroom-urinal-homabay-1.webp",
+     featured: false
+   },
+   {
+     id: 8,
+-    title: "Shower Installation",
+-    description: "Luxury shower installation with rainfall showerhead and body jets.",
++    title: "Twin-Panel Solar Water Heater Installation",
++    description: "Installation of two vacuum tube solar water heaters on a single residential roof to serve separate wings of the home.",
++    category: "water-heater",
++    location: "Turbo, Uasin Gishu County",
++    completionDate: "2026-06-18",
++    image: "water-heaters/water-heater-turbo-1.webp",
++    featured: false
++  },
++  {
++    id: 9,
++    title: "Multi-Panel Solar Water Heater Installation",
++    description: "Installation of three JOL solar water heater units on a single residential roof, providing hot water supply across multiple sections of the home.",
++    category: "water-heater",
++    location: "Eldoret, Uasin Gishu County",
++    completionDate: "2026-05-20",
++    image: "water-heaters/water-heater-multi-panel-1.webp",
++    featured: false
++  },
++  {
++    id: 10,
++    title: "Bathroom Vanity Cabinet Installation",
++    description: "Installation of a custom vanity cabinet with integrated bathtub during a full bathroom renovation, including plumbing rough-in for sink and tub connections.",
++    category: "bathroom",
++    location: "Eldoret, Uasin Gishu County",
++    completionDate: "2026-04-22",
++    image: "bathroom-installations/bathroom-vanity-cabinet-install-1.webp",
++    featured: false
++  },
++  {
++    id: 11,
++    title: "Rainfall Shower Fixture Installation",
++    description: "Installation of a rainfall showerhead with handheld shower attachment and thermostatic mixer valve for a bathroom upgrade.",
++    category: "bathroom",
++    location: "Kisumu, Kisumu County",
++    completionDate: "2026-05-12",
++    image: "bathroom-installations/rainfall-shower-fixture-install-1.webp",
++    featured: false
++  },
++  {
++    id: 12,
++    title: "Institutional Restroom Fit-Out",
++    description: "Plumbing fixture installation for a commercial restroom, including wall-mounted sinks and toilet as part of a facility renovation.",
++    category: "bathroom",
++    location: "Kisii, Kisii County",
++    completionDate: "2026-03-18",
++    image: "commercial/institutional-restroom-fitout-1.webp",
++    featured: false
++  },
++  {
++    id: 13,
++    title: "Underground Drainage Pipework",
++    description: "Installation of underground PVC drainage and supply pipework for a new residential construction, including junction fittings and pipe routing through the foundation wall.",
++    category: "pipe",
++    location: "Siaya, Siaya County",
++    completionDate: "2026-02-08",
++    image: "residential/underground-drainage-pipework-1.webp",
++    featured: false
++  },
++  {
++    id: 14,
++    title: "Solar Water Heater Installation",
++    description: "Installation of a Synnova solar water heating system on a natural stone residential roof, including roof mounting and pipe connections.",
++    category: "water-heater",
++    location: "Kapsabet, Nandi County",
++    completionDate: "2026-06-02",
++    image: "water-heaters/water-heater-stone-house-install-1.webp",
++    featured: false
++  },
++  {
++    id: 15,
++    title: "Elevated Water Storage Tower Installation",
++    description: "Construction and installation of an elevated steel water storage tower with tank platform, providing gravity-fed water supply for a residential property.",
++    category: "pipe",
++    location: "Eldoret, Uasin Gishu County",
++    completionDate: "2026-01-15",
++    image: "water-tanks/water-tower-installation-1.webp",
++    featured: false
++  },
++  {
++    id: 16,
++    title: "Underground Septic Tank Installation",
++    description: "Installation of an underground septic/biodigester tank system for residential wastewater management, including excavation and tank placement.",
++    category: "sewage",
++    location: "Homa Bay, Homa Bay County",
++    completionDate: "2026-04-30",
++    image: "water-tanks/septic-tank-installation-1.webp",
++    featured: false
++  },
++  {
++    id: 17,
++    title: "Elevated Water Storage Tower Installation",
++    description: "Construction of an elevated steel water storage tower for a residential property with poultry-keeping facilities, providing reliable gravity-fed water supply.",
++    category: "pipe",
++    location: "Nandi Hills, Nandi County",
++    completionDate: "2026-03-25",
++    image: "water-tanks/water-tower-installation-2.webp",
++    featured: false
++  },
++  {
++    id: 18,
++    title: "Toilet Installation",
++    description: "Installation of a water-efficient toilet fixture with proper drainage connection as part of a bathroom fit-out.",
+     category: "bathroom",
+-    location: "Eldoret",
+-    completionDate: "2024-03-20",
+-    image: "shower1.jpg",
++    location: "Eldoret, Uasin Gishu County",
++    completionDate: "2026-02-14",
++    image: "bathroom-installations/toilet-installation-1.webp",
++    featured: false
++  },
++  {
++    id: 19,
++    title: "Kitchen Sink Installation",
++    description: "Installation of a stainless steel double-basin kitchen sink with mixer tap on a granite countertop, including supply and drainage connections.",
++    category: "kitchen",
++    location: "Kisumu, Kisumu County",
++    completionDate: "2026-05-08",
++    image: "kitchen-plumbing/kitchen-sink-installation-1.webp",
++    featured: false
++  },
++  {
++    id: 20,
++    title: "School Laboratory Sink Installation",
++    description: "Installation of multiple laboratory sink stations with individual gooseneck taps for a school science laboratory.",
++    category: "pipe",
++    location: "Kapsabet, Nandi County",
++    completionDate: "2026-01-20",
++    image: "commercial/school-lab-sink-installation-1.webp",
++    featured: false
++  },
++  {
++    id: 21,
++    title: "Pedestal Sink Installation",
++    description: "Installation of a pedestal bathroom sink with chrome mixer tap as part of a bathroom renovation.",
++    category: "bathroom",
++    location: "Migori, Migori County",
++    completionDate: "2026-04-11",
++    image: "bathroom-installations/pedestal-sink-installation-1.webp",
++    featured: false
++  },
++  {
++    id: 22,
++    title: "Commercial Rough-In Plumbing",
++    description: "First-fix plumbing rough-in for a large commercial construction project, including drainage stub-outs across the roof slab ahead of the concrete pour.",
++    category: "pipe",
++    location: "Eldoret, Uasin Gishu County",
++    completionDate: "2026-06-05",
++    image: "commercial/commercial-rough-in-plumbing-1.webp",
+     featured: false
+   }
+   // Add more items as needed by copying the structure above
+-];
+\ No newline at end of file
++];
+diff --git a/pages/gallery.html b/pages/gallery.html
+index 110124e..5fcedf8 100644
+--- a/pages/gallery.html
++++ b/pages/gallery.html
+@@ -14,7 +14,7 @@
+       <li><a href="/index.html">Home</a></li>
+       <li><a href="/about/index.html">About</a></li>
+       <li><a href="/services/index.html">Services</a></li>
+-      <li><a href="/gallery.html">Gallery</a></li>
++      <li><a href="/gallery/">Gallery</a></li>
+       <li><a href="/contact/index.html">Contact</a></li>
+     </ul>
+     <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+@@ -27,7 +27,7 @@
+       <h1>Our Completed Projects</h1>
+       <p>Explore our high-quality plumbing work across residential and commercial properties.</p>
+       <div class="hero-btns">
+-        <a href="/gallery.html" class="btn-primary">View All</a>
++        <a href="/gallery/" class="btn-primary">View All</a>
+       </div>
+     </div>
+   </section>
+@@ -47,7 +47,7 @@
+   <script>
+     // Gallery data - add image filenames to this array when you add new images
+     const galleryImages = [
+-      'bathroom1.jpg',
++      'bathroom-kisii-1.webp',
+       'bathroom2.jpg',
+       'kitchen1.jpg',
+       'kitchen2.jpg',
+diff --git a/services/bathroom-kitchen-fitting/index.html b/services/bathroom-kitchen-fitting/index.html
+index 27b12c4..f12fddf 100644
+--- a/services/bathroom-kitchen-fitting/index.html
++++ b/services/bathroom-kitchen-fitting/index.html
+@@ -13,23 +13,27 @@
+   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+-  <link rel="manifest" href="/manifest.json"><link rel="icon" href="/images/icons/favicon.svg" type="image/svg+xml">
++  <link rel="manifest" href="/manifest.json">
++  <link rel="icon" href="../../images/icons/favicon.ico">
++  <link rel="icon" href="../../images/icons/favicon-32x32.png" sizes="32x32" type="image/png">
++  <link rel="icon" href="../../images/icons/favicon-16x16.png" sizes="16x16" type="image/png">
++  <link rel="apple-touch-icon" href="../../images/icons/apple-touch-icon.png">
+   <link rel="stylesheet" href="/css/styles.css">
+ </head>
+ <body>
+   <a href="#main-content" class="skip-nav">Skip to main content</a>
+   <div class="top-bar"><div class="top-bar-left"><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Eldoret, Kenya</span></div><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+254 721 342 738</span></div><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon–Sat: 7AM–7PM</span></div></div><div class="top-bar-right"><div class="top-bar-social"><a href="https://facebook.com/demaplumbing" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div></div></div>
+-  <nav><div class="logo"><img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="64" height="64"><div class="logo-text"><span class="logo-dema">DEMA</span><span class="logo-subtitle">Plumbing Enterprise</span></div></div>
+-    <ul class="nav-links"><li><a href="/index.html">Home</a></li><li><a href="/about/index.html">About</a></li><li class="nav-dropdown"><a href="/services/index.html" class="active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown-menu"><a href="/services/index.html">All Services</a><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/bathroom-kitchen-fitting/" aria-current="page">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a></div></li><li><a href="/gallery.html">Projects</a></li><li><a href="/contact/index.html">Contact</a></li></ul>
+-    <a href="/contact/index.html" class="nav-cta">Get a Quote</a>
++  <nav><div class="logo"><img src="../../images/logo/logo.png" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="40" height="40">DEMA<span>.</span></div>
++    <ul class="nav-links"><li><a href="../../">Home</a></li><li><a href="../../about/">About</a></li><li class="nav-dropdown"><a href="../" class="active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown-menu"><a href="../">All Services</a><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/bathroom-kitchen-fitting/" aria-current="page">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a></div></li><li><a href="../../gallery/">Projects</a></li><li><a href="../../contact/">Contact</a></li></ul>
++    <a href="../../contact/" class="nav-cta">Get a Quote</a>
+   </nav>
+   <main id="main-content">
+-  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/index.html">Home</a></li><li><a href="/services/index.html">Services</a></li><li aria-current="page">Bathroom &amp; Kitchen Fitting</li></ol></nav>
++  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../">Services</a></li><li aria-current="page">Bathroom &amp; Kitchen Fitting</li></ol></nav>
+   <section class="service-page-hero"><div class="service-page-hero-text">
+     <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h18v18H3zM9 9h6v6H9z"/></svg> Complete Fitting Services</div>
+     <h1>Bathroom &amp; Kitchen Fitting</h1>
+     <p>Full bathroom and kitchen plumbing installations — from individual fixture replacements to complete room renovations with quality fittings.</p>
+-    <div class="hero-btns"><a href="/contact/index.html" class="btn-primary">Get a Free Consultation</a><a href="tel:+254721342738" class="btn-outline">Call +254 721 342 738</a></div>
++    <div class="hero-btns"><a href="../../contact/" class="btn-primary">Get a Free Consultation</a><a href="tel:+254721342738" class="btn-outline">Call +254 721 342 738</a></div>
+   </div></section>
+   <section class="service-detail-section">
+     <div class="section-label"><span>What We Install</span></div>
+@@ -54,9 +58,9 @@
+     <div class="service-card" data-animate><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg></div><h3>Water Heater Services</h3><p>Pair your bathroom renovation with a new energy-efficient water heater.</p><a href="/services/water-heaters/" class="service-learn-more">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+     <div class="service-card" data-animate><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div><h3>Leak Detection</h3><p>Post-installation check to ensure every joint and seal is leak-free.</p><a href="/services/leak-detection/" class="service-learn-more">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+   </div></section>
+-  <section class="cta-section"><div><h2>Planning a Bathroom or Kitchen Upgrade?</h2><p>Get a free consultation and no-obligation quote. We work with your schedule and budget.</p></div><a href="/contact/index.html" class="btn-dark">Get a Free Consultation &rarr;</a></section>
++  <section class="cta-section"><div><h2>Planning a Bathroom or Kitchen Upgrade?</h2><p>Get a free consultation and no-obligation quote. We work with your schedule and budget.</p></div><a href="../../contact/" class="btn-dark">Get a Free Consultation &rarr;</a></section>
+   </main>
+   <a href="https://wa.me/254721342738" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+-  <footer><div class="footer-grid"><div><div class="footer-logo"><img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET</div><p class="footer-copy">Professional plumbing for residential and commercial clients across Kenya. Quality workmanship and 24/7 emergency support.</p></div><div class="footer-links"><h4>Quick Links</h4><a href="/index.html">Home</a><a href="/about/index.html">About Us</a><a href="/services/index.html">Services</a><a href="/gallery.html">Projects</a><a href="/contact/index.html">Contact</a></div><div class="footer-links"><h4>Our Services</h4><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a></div><div class="footer-links"><h4>Contact Info</h4><a href="tel:+254721342738">+254 721 342 738</a><a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a><div class="footer-working-hours"><p><strong>Mon – Sat:</strong> 7:00 AM – 7:00 PM</p><p><strong>Sunday:</strong> 8:00 AM – 5:00 PM</p><p><strong>Emergency:</strong> 24/7 Available</p></div></div></div><div class="footer-bottom"><p>&copy; 2026 Dema Plumbing and Pipe Fitting Eldoret. All rights reserved.</p></div></footer>
++  <footer><div class="footer-grid"><div><div class="footer-logo"><img src="../../images/logo/logo.png" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET</div><p class="footer-copy">Professional plumbing for residential and commercial clients across Kenya. Quality workmanship and 24/7 emergency support.</p></div><div class="footer-links"><h4>Quick Links</h4><a href="../../">Home</a><a href="../../about/">About Us</a><a href="../">Services</a><a href="../../gallery/">Projects</a><a href="../../contact/">Contact</a></div><div class="footer-links"><h4>Our Services</h4><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a></div><div class="footer-links"><h4>Contact Info</h4><a href="tel:+254721342738">+254 721 342 738</a><a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a><div class="footer-working-hours"><p><strong>Mon – Sat:</strong> 7:00 AM – 7:00 PM</p><p><strong>Sunday:</strong> 8:00 AM – 5:00 PM</p><p><strong>Emergency:</strong> 24/7 Available</p></div></div></div><div class="footer-bottom"><p>&copy; 2026 Dema Plumbing and Pipe Fitting Eldoret. All rights reserved.</p></div></footer>
+   <script src="/js/main.js" defer></script>
+ </body></html>
+diff --git a/services/drain-cleaning/index.html b/services/drain-cleaning/index.html
+index 225c698..1272603 100644
+--- a/services/drain-cleaning/index.html
++++ b/services/drain-cleaning/index.html
+@@ -13,31 +13,35 @@
+   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+-  <link rel="manifest" href="/manifest.json"><link rel="icon" href="/images/icons/favicon.svg" type="image/svg+xml">
++  <link rel="manifest" href="/manifest.json">
++  <link rel="icon" href="../../images/icons/favicon.ico">
++  <link rel="icon" href="../../images/icons/favicon-32x32.png" sizes="32x32" type="image/png">
++  <link rel="icon" href="../../images/icons/favicon-16x16.png" sizes="16x16" type="image/png">
++  <link rel="apple-touch-icon" href="../../images/icons/apple-touch-icon.png">
+   <link rel="stylesheet" href="/css/styles.css">
+ </head>
+ <body>
+   <a href="#main-content" class="skip-nav">Skip to main content</a>
+   <div class="top-bar"><div class="top-bar-left"><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Eldoret, Kenya</span></div><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+254 721 342 738</span></div><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon–Sat: 7AM–7PM | Sun: 8AM–5PM</span></div></div><div class="top-bar-right"><div class="top-bar-social"><a href="https://facebook.com/demaplumbing" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="https://wa.me/254721342738" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a></div></div></div>
+   <nav>
+-    <div class="logo"><img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="64" height="64"><div class="logo-text"><span class="logo-dema">DEMA</span><span class="logo-subtitle">Plumbing Enterprise</span></div></div>
++    <div class="logo"><img src="../../images/logo/logo.png" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="40" height="40">DEMA<span>.</span></div>
+     <ul class="nav-links">
+-      <li><a href="/index.html">Home</a></li><li><a href="/about/index.html">About</a></li>
+-      <li class="nav-dropdown"><a href="/services/index.html" class="active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+-        <div class="dropdown-menu"><a href="/services/index.html">All Services</a><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/" aria-current="page">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a></div>
++      <li><a href="../../">Home</a></li><li><a href="../../about/">About</a></li>
++      <li class="nav-dropdown"><a href="../" class="active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
++        <div class="dropdown-menu"><a href="../">All Services</a><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/" aria-current="page">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a></div>
+       </li>
+-      <li><a href="/gallery.html">Projects</a></li><li><a href="/contact/index.html">Contact</a></li>
++      <li><a href="../../gallery/">Projects</a></li><li><a href="../../contact/">Contact</a></li>
+     </ul>
+-    <a href="/contact/index.html" class="nav-cta">Get a Quote</a>
++    <a href="../../contact/" class="nav-cta">Get a Quote</a>
+   </nav>
+   <main id="main-content">
+-  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/index.html">Home</a></li><li><a href="/services/index.html">Services</a></li><li aria-current="page">Drain Cleaning</li></ol></nav>
++  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../">Services</a></li><li aria-current="page">Drain Cleaning</li></ol></nav>
+   <section class="service-page-hero">
+     <div class="service-page-hero-text">
+       <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Powerful Drain Cleaning</div>
+       <h1>Drain Cleaning Services</h1>
+       <p>Clogged drains cleared fast using hydro-jetting and professional snaking — kitchens, bathrooms, and main lines. Same-day service available.</p>
+-      <div class="hero-btns"><a href="/contact/index.html" class="btn-primary">Book a Service</a><a href="tel:+254721342738" class="btn-outline">Call +254 721 342 738</a></div>
++      <div class="hero-btns"><a href="../../contact/" class="btn-primary">Book a Service</a><a href="tel:+254721342738" class="btn-outline">Call +254 721 342 738</a></div>
+     </div>
+   </section>
+   <section class="service-detail-section">
+@@ -71,10 +75,10 @@
+       <div class="service-card" data-animate><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Emergency Plumbing</h3><p>Severe blockages causing overflow? We respond 24/7 for urgent drain emergencies.</p><a href="/services/emergency-plumbing/" class="service-learn-more">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+     </div>
+   </section>
+-  <section class="cta-section"><div><h2>Blocked Drain? We'll Clear It Today.</h2><p>Fast, professional drain cleaning with same-day availability. Call us or book online now.</p></div><a href="/contact/index.html" class="btn-dark">Book a Service &rarr;</a></section>
++  <section class="cta-section"><div><h2>Blocked Drain? We'll Clear It Today.</h2><p>Fast, professional drain cleaning with same-day availability. Call us or book online now.</p></div><a href="../../contact/" class="btn-dark">Book a Service &rarr;</a></section>
+   </main>
+   <a href="https://wa.me/254721342738" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+-  <footer><div class="footer-grid"><div><div class="footer-logo"><img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET</div><p class="footer-copy">Professional plumbing for residential and commercial clients across Kenya. Quality workmanship and 24/7 emergency support.</p></div><div class="footer-links"><h4>Quick Links</h4><a href="/index.html">Home</a><a href="/about/index.html">About Us</a><a href="/services/index.html">Services</a><a href="/gallery.html">Projects</a><a href="/contact/index.html">Contact</a></div><div class="footer-links"><h4>Our Services</h4><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a></div><div class="footer-links"><h4>Contact Info</h4><a href="tel:+254721342738">+254 721 342 738</a><a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a><div class="footer-working-hours"><p><strong>Mon – Sat:</strong> 7:00 AM – 7:00 PM</p><p><strong>Sunday:</strong> 8:00 AM – 5:00 PM</p><p><strong>Emergency:</strong> 24/7 Available</p></div></div></div><div class="footer-bottom"><p>&copy; 2026 Dema Plumbing and Pipe Fitting Eldoret. All rights reserved.</p></div></footer>
++  <footer><div class="footer-grid"><div><div class="footer-logo"><img src="../../images/logo/logo.png" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET</div><p class="footer-copy">Professional plumbing for residential and commercial clients across Kenya. Quality workmanship and 24/7 emergency support.</p></div><div class="footer-links"><h4>Quick Links</h4><a href="../../">Home</a><a href="../../about/">About Us</a><a href="../">Services</a><a href="../../gallery/">Projects</a><a href="../../contact/">Contact</a></div><div class="footer-links"><h4>Our Services</h4><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a></div><div class="footer-links"><h4>Contact Info</h4><a href="tel:+254721342738">+254 721 342 738</a><a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a><div class="footer-working-hours"><p><strong>Mon – Sat:</strong> 7:00 AM – 7:00 PM</p><p><strong>Sunday:</strong> 8:00 AM – 5:00 PM</p><p><strong>Emergency:</strong> 24/7 Available</p></div></div></div><div class="footer-bottom"><p>&copy; 2026 Dema Plumbing and Pipe Fitting Eldoret. All rights reserved.</p></div></footer>
+   <script src="/js/main.js" defer></script>
+ </body>
+ </html>
+diff --git a/services/emergency-plumbing/index.html b/services/emergency-plumbing/index.html
+index 0a331e8..ece9619 100644
+--- a/services/emergency-plumbing/index.html
++++ b/services/emergency-plumbing/index.html
+@@ -13,18 +13,22 @@
+   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+-  <link rel="manifest" href="/manifest.json"><link rel="icon" href="/images/icons/favicon.svg" type="image/svg+xml">
++  <link rel="manifest" href="/manifest.json">
++  <link rel="icon" href="../../images/icons/favicon.ico">
++  <link rel="icon" href="../../images/icons/favicon-32x32.png" sizes="32x32" type="image/png">
++  <link rel="icon" href="../../images/icons/favicon-16x16.png" sizes="16x16" type="image/png">
++  <link rel="apple-touch-icon" href="../../images/icons/apple-touch-icon.png">
+   <link rel="stylesheet" href="/css/styles.css">
+ </head>
+ <body>
+   <a href="#main-content" class="skip-nav">Skip to main content</a>
+   <div class="top-bar"><div class="top-bar-left"><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Eldoret, Kenya</span></div><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+254 721 342 738</span></div><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Available 24/7</span></div></div><div class="top-bar-right"><div class="top-bar-social"><a href="https://facebook.com/demaplumbing" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="https://wa.me/254721342738" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a></div></div></div>
+-  <nav><div class="logo"><img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="64" height="64"><div class="logo-text"><span class="logo-dema">DEMA</span><span class="logo-subtitle">Plumbing Enterprise</span></div></div>
+-    <ul class="nav-links"><li><a href="/index.html">Home</a></li><li><a href="/about/index.html">About</a></li><li class="nav-dropdown"><a href="/services/index.html" class="active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown-menu"><a href="/services/index.html">All Services</a><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a><a href="/services/emergency-plumbing/" aria-current="page">Emergency Plumbing</a></div></li><li><a href="/gallery.html">Projects</a></li><li><a href="/contact/index.html">Contact</a></li></ul>
++  <nav><div class="logo"><img src="../../images/logo/logo.png" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="40" height="40">DEMA<span>.</span></div>
++    <ul class="nav-links"><li><a href="../../">Home</a></li><li><a href="../../about/">About</a></li><li class="nav-dropdown"><a href="../" class="active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown-menu"><a href="../">All Services</a><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a><a href="/services/emergency-plumbing/" aria-current="page">Emergency Plumbing</a></div></li><li><a href="../../gallery/">Projects</a></li><li><a href="../../contact/">Contact</a></li></ul>
+     <a href="tel:+254721342738" class="nav-cta">Call Now — 24/7</a>
+   </nav>
+   <main id="main-content">
+-  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/index.html">Home</a></li><li><a href="/services/index.html">Services</a></li><li aria-current="page">Emergency Plumbing</li></ol></nav>
++  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../">Services</a></li><li aria-current="page">Emergency Plumbing</li></ol></nav>
+   <section class="service-page-hero"><div class="service-page-hero-text">
+     <div class="hero-badge" style="background:rgba(239,68,68,0.1);border-color:#EF4444;color:#EF4444;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> 24/7 Emergency Service</div>
+     <h1>24/7 Emergency Plumbing</h1>
+@@ -57,6 +61,6 @@
+   <section class="cta-section" style="background:linear-gradient(135deg,#c0392b,#e74c3c);"><div><h2>Plumbing Emergency? Call Right Now.</h2><p>Don't wait — every minute counts. Call <strong>+254 721 342 738</strong> for immediate dispatch 24/7.</p></div><a href="tel:+254721342738" class="btn-dark">Call +254 721 342 738</a></section>
+   </main>
+   <a href="https://wa.me/254721342738" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+-  <footer><div class="footer-grid"><div><div class="footer-logo"><img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET</div><p class="footer-copy">Professional plumbing for residential and commercial clients across Kenya. Quality workmanship and 24/7 emergency support.</p></div><div class="footer-links"><h4>Quick Links</h4><a href="/index.html">Home</a><a href="/about/index.html">About Us</a><a href="/services/index.html">Services</a><a href="/gallery.html">Projects</a><a href="/contact/index.html">Contact</a></div><div class="footer-links"><h4>Our Services</h4><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a></div><div class="footer-links"><h4>Contact Info</h4><a href="tel:+254721342738">+254 721 342 738</a><a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a><div class="footer-working-hours"><p><strong>Emergency:</strong> 24/7 Available</p><p><strong>Mon – Sat:</strong> 7:00 AM – 7:00 PM</p><p><strong>Sunday:</strong> 8:00 AM – 5:00 PM</p></div></div></div><div class="footer-bottom"><p>&copy; 2026 Dema Plumbing and Pipe Fitting Eldoret. All rights reserved.</p></div></footer>
++  <footer><div class="footer-grid"><div><div class="footer-logo"><img src="../../images/logo/logo.png" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET</div><p class="footer-copy">Professional plumbing for residential and commercial clients across Kenya. Quality workmanship and 24/7 emergency support.</p></div><div class="footer-links"><h4>Quick Links</h4><a href="../../">Home</a><a href="../../about/">About Us</a><a href="../">Services</a><a href="../../gallery/">Projects</a><a href="../../contact/">Contact</a></div><div class="footer-links"><h4>Our Services</h4><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a></div><div class="footer-links"><h4>Contact Info</h4><a href="tel:+254721342738">+254 721 342 738</a><a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a><div class="footer-working-hours"><p><strong>Emergency:</strong> 24/7 Available</p><p><strong>Mon – Sat:</strong> 7:00 AM – 7:00 PM</p><p><strong>Sunday:</strong> 8:00 AM – 5:00 PM</p></div></div></div><div class="footer-bottom"><p>&copy; 2026 Dema Plumbing and Pipe Fitting Eldoret. All rights reserved.</p></div></footer>
+   <script src="/js/main.js" defer></script>
+ </body></html>
+diff --git a/services/leak-detection/index.html b/services/leak-detection/index.html
+index bb89270..36ea082 100644
+--- a/services/leak-detection/index.html
++++ b/services/leak-detection/index.html
+@@ -25,7 +25,10 @@
+   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+   <link rel="manifest" href="/manifest.json">
+-  <link rel="icon" href="/images/icons/favicon.svg" type="image/svg+xml">
++  <link rel="icon" href="../../images/icons/favicon.ico">
++  <link rel="icon" href="../../images/icons/favicon-32x32.png" sizes="32x32" type="image/png">
++  <link rel="icon" href="../../images/icons/favicon-16x16.png" sizes="16x16" type="image/png">
++  <link rel="apple-touch-icon" href="../../images/icons/apple-touch-icon.png">
+   <link rel="stylesheet" href="/css/styles.css">
+ </head>
+ <body>
+@@ -45,16 +48,15 @@
+   <!-- NAV -->
+   <nav>
+     <div class="logo">
+-      <img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="64" height="64">
+-      <div class="logo-text"><span class="logo-dema">DEMA</span><span class="logo-subtitle">Plumbing Enterprise</span></div>
++      <img src="../../images/logo/logo.png" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="40" height="40">DEMA<span>.</span>
+     </div>
+     <ul class="nav-links">
+-      <li><a href="/index.html">Home</a></li>
+-      <li><a href="/about/index.html">About</a></li>
++      <li><a href="../../">Home</a></li>
++      <li><a href="../../about/">About</a></li>
+       <li class="nav-dropdown">
+-        <a href="/services/index.html" class="active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
++        <a href="../" class="active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+         <div class="dropdown-menu">
+-          <a href="/services/index.html">All Services</a>
++          <a href="../">All Services</a>
+           <a href="/services/leak-detection/" aria-current="page">Leak Detection</a>
+           <a href="/services/drain-cleaning/">Drain Cleaning</a>
+           <a href="/services/pipe-installation/">Pipe Installation</a>
+@@ -65,15 +67,15 @@
+           <a href="/services/emergency-plumbing/">Emergency Plumbing</a>
+         </div>
+       </li>
+-      <li><a href="/gallery.html">Projects</a></li>
+-      <li><a href="/contact/index.html">Contact</a></li>
++      <li><a href="../../gallery/">Projects</a></li>
++      <li><a href="../../contact/">Contact</a></li>
+     </ul>
+-    <a href="/contact/index.html" class="nav-cta">Get a Quote</a>
++    <a href="../../contact/" class="nav-cta">Get a Quote</a>
+   </nav>
+ 
+   <main id="main-content">
+   <!-- BREADCRUMB -->
+-  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/index.html">Home</a></li><li><a href="/services/index.html">Services</a></li><li aria-current="page">Leak Detection</li></ol></nav>
++  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../">Services</a></li><li aria-current="page">Leak Detection</li></ol></nav>
+ 
+   <!-- HERO -->
+   <section class="service-page-hero">
+@@ -82,7 +84,7 @@
+       <h1>Leak Detection &amp; Repair</h1>
+       <p>Find hidden leaks fast with thermal imaging and acoustic devices — before water damage spreads. Serving homes and businesses across Kenya.</p>
+       <div class="hero-btns">
+-        <a href="/contact/index.html" class="btn-primary">Book a Free Assessment</a>
++        <a href="../../contact/" class="btn-primary">Book a Free Assessment</a>
+         <a href="tel:+254721342738" class="btn-outline">Call +254 721 342 738</a>
+       </div>
+     </div>
+@@ -162,7 +164,7 @@
+       <h2>Suspect a Hidden Leak? Act Now.</h2>
+       <p>Every hour a leak goes undetected costs money and risks structural damage. We respond within the hour.</p>
+     </div>
+-    <a href="/contact/index.html" class="btn-dark">Book Free Assessment &rarr;</a>
++    <a href="../../contact/" class="btn-dark">Book Free Assessment &rarr;</a>
+   </section>
+   </main>
+ 
+@@ -172,7 +174,7 @@
+   <footer>
+     <div class="footer-grid">
+       <div>
+-        <div class="footer-logo"><img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET</div>
++        <div class="footer-logo"><img src="../../images/logo/logo.png" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET</div>
+         <p class="footer-copy">Professional plumbing for residential and commercial clients across Kenya. Quality workmanship, transparent pricing, and 24/7 emergency support.</p>
+         <div class="footer-social">
+           <a href="https://facebook.com/demaplumbing" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+@@ -180,7 +182,7 @@
+           <a href="mailto:richardomondi19@gmail.com" aria-label="Email us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+         </div>
+       </div>
+-      <div class="footer-links"><h4>Quick Links</h4><a href="/index.html">Home</a><a href="/about/index.html">About Us</a><a href="/services/index.html">Services</a><a href="/gallery.html">Gallery</a><a href="/contact/index.html">Contact</a></div>
++      <div class="footer-links"><h4>Quick Links</h4><a href="../../">Home</a><a href="../../about/">About Us</a><a href="../">Services</a><a href="../../gallery/">Gallery</a><a href="../../contact/">Contact</a></div>
+       <div class="footer-links"><h4>Our Services</h4><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a></div>
+       <div class="footer-links"><h4>Contact Info</h4><a href="tel:+254721342738">+254 721 342 738</a><a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a><div class="footer-working-hours"><p><strong>Mon – Sat:</strong> 7:00 AM – 7:00 PM</p><p><strong>Sunday:</strong> 8:00 AM – 5:00 PM</p><p><strong>Emergency:</strong> 24/7 Available</p></div></div>
+     </div>
+diff --git a/services/pipe-installation/index.html b/services/pipe-installation/index.html
+index 4985c54..5761eba 100644
+--- a/services/pipe-installation/index.html
++++ b/services/pipe-installation/index.html
+@@ -13,23 +13,27 @@
+   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+-  <link rel="manifest" href="/manifest.json"><link rel="icon" href="/images/icons/favicon.svg" type="image/svg+xml">
++  <link rel="manifest" href="/manifest.json">
++  <link rel="icon" href="../../images/icons/favicon.ico">
++  <link rel="icon" href="../../images/icons/favicon-32x32.png" sizes="32x32" type="image/png">
++  <link rel="icon" href="../../images/icons/favicon-16x16.png" sizes="16x16" type="image/png">
++  <link rel="apple-touch-icon" href="../../images/icons/apple-touch-icon.png">
+   <link rel="stylesheet" href="/css/styles.css">
+ </head>
+ <body>
+   <a href="#main-content" class="skip-nav">Skip to main content</a>
+   <div class="top-bar"><div class="top-bar-left"><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Eldoret, Kenya</span></div><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+254 721 342 738</span></div><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon–Sat: 7AM–7PM | Sun: 8AM–5PM</span></div></div><div class="top-bar-right"><div class="top-bar-social"><a href="https://facebook.com/demaplumbing" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div></div></div>
+-  <nav><div class="logo"><img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="64" height="64"><div class="logo-text"><span class="logo-dema">DEMA</span><span class="logo-subtitle">Plumbing Enterprise</span></div></div>
+-    <ul class="nav-links"><li><a href="/index.html">Home</a></li><li><a href="/about/index.html">About</a></li><li class="nav-dropdown"><a href="/services/index.html" class="active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown-menu"><a href="/services/index.html">All Services</a><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/" aria-current="page">Pipe Installation</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a></div></li><li><a href="/gallery.html">Projects</a></li><li><a href="/contact/index.html">Contact</a></li></ul>
+-    <a href="/contact/index.html" class="nav-cta">Get a Quote</a>
++  <nav><div class="logo"><img src="../../images/logo/logo.png" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="40" height="40">DEMA<span>.</span></div>
++    <ul class="nav-links"><li><a href="../../">Home</a></li><li><a href="../../about/">About</a></li><li class="nav-dropdown"><a href="../" class="active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown-menu"><a href="../">All Services</a><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/" aria-current="page">Pipe Installation</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a></div></li><li><a href="../../gallery/">Projects</a></li><li><a href="../../contact/">Contact</a></li></ul>
++    <a href="../../contact/" class="nav-cta">Get a Quote</a>
+   </nav>
+   <main id="main-content">
+-  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/index.html">Home</a></li><li><a href="/services/index.html">Services</a></li><li aria-current="page">Pipe Installation</li></ol></nav>
++  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../">Services</a></li><li aria-current="page">Pipe Installation</li></ol></nav>
+   <section class="service-page-hero"><div class="service-page-hero-text">
+     <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> Precision Pipe Work</div>
+     <h1>Pipe Installation &amp; Repair</h1>
+     <p>Professional pipe installation and repair for new builds, renovations, and replacements. Copper, PVC, and PEX systems built to last decades.</p>
+-    <div class="hero-btns"><a href="/contact/index.html" class="btn-primary">Get a Free Quote</a><a href="tel:+254721342738" class="btn-outline">Call +254 721 342 738</a></div>
++    <div class="hero-btns"><a href="../../contact/" class="btn-primary">Get a Free Quote</a><a href="tel:+254721342738" class="btn-outline">Call +254 721 342 738</a></div>
+   </div></section>
+   <section class="service-detail-section">
+     <div class="section-label"><span>What We Offer</span></div>
+@@ -54,9 +58,9 @@
+     <div class="service-card" data-animate><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h18v18H3zM9 9h6v6H9z"/></svg></div><h3>Bathroom &amp; Kitchen Fitting</h3><p>Complete fixture installation to complement your new pipe system.</p><a href="/services/bathroom-kitchen-fitting/" class="service-learn-more">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+     <div class="service-card" data-animate><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/><path d="M12 12v6"/></svg></div><h3>Water Pressure Solutions</h3><p>New pipes deserve optimal pressure — we test and balance your system.</p><a href="/services/water-pressure/" class="service-learn-more">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+   </div></section>
+-  <section class="cta-section"><div><h2>Ready to Install or Upgrade Your Pipes?</h2><p>Get a transparent, no-obligation quote today. We work on new builds, renovations, and emergency replacements.</p></div><a href="/contact/index.html" class="btn-dark">Get a Free Quote &rarr;</a></section>
++  <section class="cta-section"><div><h2>Ready to Install or Upgrade Your Pipes?</h2><p>Get a transparent, no-obligation quote today. We work on new builds, renovations, and emergency replacements.</p></div><a href="../../contact/" class="btn-dark">Get a Free Quote &rarr;</a></section>
+   </main>
+   <a href="https://wa.me/254721342738" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+-  <footer><div class="footer-grid"><div><div class="footer-logo"><img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET</div><p class="footer-copy">Professional plumbing for residential and commercial clients across Kenya. Quality workmanship and 24/7 emergency support.</p></div><div class="footer-links"><h4>Quick Links</h4><a href="/index.html">Home</a><a href="/about/index.html">About Us</a><a href="/services/index.html">Services</a><a href="/gallery.html">Projects</a><a href="/contact/index.html">Contact</a></div><div class="footer-links"><h4>Our Services</h4><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a></div><div class="footer-links"><h4>Contact Info</h4><a href="tel:+254721342738">+254 721 342 738</a><a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a><div class="footer-working-hours"><p><strong>Mon – Sat:</strong> 7:00 AM – 7:00 PM</p><p><strong>Sunday:</strong> 8:00 AM – 5:00 PM</p><p><strong>Emergency:</strong> 24/7 Available</p></div></div></div><div class="footer-bottom"><p>&copy; 2026 Dema Plumbing and Pipe Fitting Eldoret. All rights reserved.</p></div></footer>
++  <footer><div class="footer-grid"><div><div class="footer-logo"><img src="../../images/logo/logo.png" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET</div><p class="footer-copy">Professional plumbing for residential and commercial clients across Kenya. Quality workmanship and 24/7 emergency support.</p></div><div class="footer-links"><h4>Quick Links</h4><a href="../../">Home</a><a href="../../about/">About Us</a><a href="../">Services</a><a href="../../gallery/">Projects</a><a href="../../contact/">Contact</a></div><div class="footer-links"><h4>Our Services</h4><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a></div><div class="footer-links"><h4>Contact Info</h4><a href="tel:+254721342738">+254 721 342 738</a><a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a><div class="footer-working-hours"><p><strong>Mon – Sat:</strong> 7:00 AM – 7:00 PM</p><p><strong>Sunday:</strong> 8:00 AM – 5:00 PM</p><p><strong>Emergency:</strong> 24/7 Available</p></div></div></div><div class="footer-bottom"><p>&copy; 2026 Dema Plumbing and Pipe Fitting Eldoret. All rights reserved.</p></div></footer>
+   <script src="/js/main.js" defer></script>
+ </body></html>
+diff --git a/services/sewage-drainage/index.html b/services/sewage-drainage/index.html
+index 12cd2a1..8a3f8ed 100644
+--- a/services/sewage-drainage/index.html
++++ b/services/sewage-drainage/index.html
+@@ -13,23 +13,27 @@
+   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+-  <link rel="manifest" href="/manifest.json"><link rel="icon" href="/images/icons/favicon.svg" type="image/svg+xml">
++  <link rel="manifest" href="/manifest.json">
++  <link rel="icon" href="../../images/icons/favicon.ico">
++  <link rel="icon" href="../../images/icons/favicon-32x32.png" sizes="32x32" type="image/png">
++  <link rel="icon" href="../../images/icons/favicon-16x16.png" sizes="16x16" type="image/png">
++  <link rel="apple-touch-icon" href="../../images/icons/apple-touch-icon.png">
+   <link rel="stylesheet" href="/css/styles.css">
+ </head>
+ <body>
+   <a href="#main-content" class="skip-nav">Skip to main content</a>
+   <div class="top-bar"><div class="top-bar-left"><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Eldoret, Kenya</span></div><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+254 721 342 738</span></div><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon–Sat: 7AM–7PM</span></div></div><div class="top-bar-right"><div class="top-bar-social"><a href="https://facebook.com/demaplumbing" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div></div></div>
+-  <nav><div class="logo"><img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="64" height="64"><div class="logo-text"><span class="logo-dema">DEMA</span><span class="logo-subtitle">Plumbing Enterprise</span></div></div>
+-    <ul class="nav-links"><li><a href="/index.html">Home</a></li><li><a href="/about/index.html">About</a></li><li class="nav-dropdown"><a href="/services/index.html" class="active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown-menu"><a href="/services/index.html">All Services</a><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/" aria-current="page">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a></div></li><li><a href="/gallery.html">Projects</a></li><li><a href="/contact/index.html">Contact</a></li></ul>
+-    <a href="/contact/index.html" class="nav-cta">Get a Quote</a>
++  <nav><div class="logo"><img src="../../images/logo/logo.png" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="40" height="40">DEMA<span>.</span></div>
++    <ul class="nav-links"><li><a href="../../">Home</a></li><li><a href="../../about/">About</a></li><li class="nav-dropdown"><a href="../" class="active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown-menu"><a href="../">All Services</a><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/" aria-current="page">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a></div></li><li><a href="../../gallery/">Projects</a></li><li><a href="../../contact/">Contact</a></li></ul>
++    <a href="../../contact/" class="nav-cta">Get a Quote</a>
+   </nav>
+   <main id="main-content">
+-  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/index.html">Home</a></li><li><a href="/services/index.html">Services</a></li><li aria-current="page">Sewage &amp; Drainage</li></ol></nav>
++  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../">Services</a></li><li aria-current="page">Sewage &amp; Drainage</li></ol></nav>
+   <section class="service-page-hero"><div class="service-page-hero-text">
+     <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Complete Sewage &amp; Drainage</div>
+     <h1>Sewage &amp; Drainage Systems</h1>
+     <p>Professional design, installation, and repair of sewage lines and drainage systems that protect your property and meet local regulations.</p>
+-    <div class="hero-btns"><a href="/contact/index.html" class="btn-primary">Request a Site Assessment</a><a href="tel:+254721342738" class="btn-outline">Call +254 721 342 738</a></div>
++    <div class="hero-btns"><a href="../../contact/" class="btn-primary">Request a Site Assessment</a><a href="tel:+254721342738" class="btn-outline">Call +254 721 342 738</a></div>
+   </div></section>
+   <section class="service-detail-section">
+     <div class="section-label"><span>What We Do</span></div>
+@@ -54,9 +58,9 @@
+     <div class="service-card" data-animate><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Emergency Plumbing</h3><p>Sewage backup is an emergency — we respond 24/7 for urgent situations.</p><a href="/services/emergency-plumbing/" class="service-learn-more">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+     <div class="service-card" data-animate><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>Pipe Installation</h3><p>New waste and drainage pipe systems for buildings under construction or renovation.</p><a href="/services/pipe-installation/" class="service-learn-more">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+   </div></section>
+-  <section class="cta-section"><div><h2>Protect Your Property with Proper Drainage.</h2><p>Request a site assessment today — we'll design a drainage solution tailored to your property and budget.</p></div><a href="/contact/index.html" class="btn-dark">Request a Site Assessment &rarr;</a></section>
++  <section class="cta-section"><div><h2>Protect Your Property with Proper Drainage.</h2><p>Request a site assessment today — we'll design a drainage solution tailored to your property and budget.</p></div><a href="../../contact/" class="btn-dark">Request a Site Assessment &rarr;</a></section>
+   </main>
+   <a href="https://wa.me/254721342738" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+-  <footer><div class="footer-grid"><div><div class="footer-logo"><img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET</div><p class="footer-copy">Professional plumbing for residential and commercial clients across Kenya. Quality workmanship and 24/7 emergency support.</p></div><div class="footer-links"><h4>Quick Links</h4><a href="/index.html">Home</a><a href="/about/index.html">About Us</a><a href="/services/index.html">Services</a><a href="/gallery.html">Projects</a><a href="/contact/index.html">Contact</a></div><div class="footer-links"><h4>Our Services</h4><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a></div><div class="footer-links"><h4>Contact Info</h4><a href="tel:+254721342738">+254 721 342 738</a><a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a><div class="footer-working-hours"><p><strong>Mon – Sat:</strong> 7:00 AM – 7:00 PM</p><p><strong>Sunday:</strong> 8:00 AM – 5:00 PM</p><p><strong>Emergency:</strong> 24/7 Available</p></div></div></div><div class="footer-bottom"><p>&copy; 2026 Dema Plumbing and Pipe Fitting Eldoret. All rights reserved.</p></div></footer>
++  <footer><div class="footer-grid"><div><div class="footer-logo"><img src="../../images/logo/logo.png" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET</div><p class="footer-copy">Professional plumbing for residential and commercial clients across Kenya. Quality workmanship and 24/7 emergency support.</p></div><div class="footer-links"><h4>Quick Links</h4><a href="../../">Home</a><a href="../../about/">About Us</a><a href="../">Services</a><a href="../../gallery/">Projects</a><a href="../../contact/">Contact</a></div><div class="footer-links"><h4>Our Services</h4><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a></div><div class="footer-links"><h4>Contact Info</h4><a href="tel:+254721342738">+254 721 342 738</a><a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a><div class="footer-working-hours"><p><strong>Mon – Sat:</strong> 7:00 AM – 7:00 PM</p><p><strong>Sunday:</strong> 8:00 AM – 5:00 PM</p><p><strong>Emergency:</strong> 24/7 Available</p></div></div></div><div class="footer-bottom"><p>&copy; 2026 Dema Plumbing and Pipe Fitting Eldoret. All rights reserved.</p></div></footer>
+   <script src="/js/main.js" defer></script>
+ </body></html>
+diff --git a/services/water-heaters/index.html b/services/water-heaters/index.html
+index f1447ab..66e8b3c 100644
+--- a/services/water-heaters/index.html
++++ b/services/water-heaters/index.html
+@@ -13,23 +13,27 @@
+   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+-  <link rel="manifest" href="/manifest.json"><link rel="icon" href="/images/icons/favicon.svg" type="image/svg+xml">
++  <link rel="manifest" href="/manifest.json">
++  <link rel="icon" href="../../images/icons/favicon.ico">
++  <link rel="icon" href="../../images/icons/favicon-32x32.png" sizes="32x32" type="image/png">
++  <link rel="icon" href="../../images/icons/favicon-16x16.png" sizes="16x16" type="image/png">
++  <link rel="apple-touch-icon" href="../../images/icons/apple-touch-icon.png">
+   <link rel="stylesheet" href="/css/styles.css">
+ </head>
+ <body>
+   <a href="#main-content" class="skip-nav">Skip to main content</a>
+   <div class="top-bar"><div class="top-bar-left"><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Eldoret, Kenya</span></div><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+254 721 342 738</span></div><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon–Sat: 7AM–7PM</span></div></div><div class="top-bar-right"><div class="top-bar-social"><a href="https://facebook.com/demaplumbing" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div></div></div>
+-  <nav><div class="logo"><img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="64" height="64"><div class="logo-text"><span class="logo-dema">DEMA</span><span class="logo-subtitle">Plumbing Enterprise</span></div></div>
+-    <ul class="nav-links"><li><a href="/index.html">Home</a></li><li><a href="/about/index.html">About</a></li><li class="nav-dropdown"><a href="/services/index.html" class="active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown-menu"><a href="/services/index.html">All Services</a><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/" aria-current="page">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a></div></li><li><a href="/gallery.html">Projects</a></li><li><a href="/contact/index.html">Contact</a></li></ul>
+-    <a href="/contact/index.html" class="nav-cta">Get a Quote</a>
++  <nav><div class="logo"><img src="../../images/logo/logo.png" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="40" height="40">DEMA<span>.</span></div>
++    <ul class="nav-links"><li><a href="../../">Home</a></li><li><a href="../../about/">About</a></li><li class="nav-dropdown"><a href="../" class="active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown-menu"><a href="../">All Services</a><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/" aria-current="page">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a></div></li><li><a href="../../gallery/">Projects</a></li><li><a href="../../contact/">Contact</a></li></ul>
++    <a href="../../contact/" class="nav-cta">Get a Quote</a>
+   </nav>
+   <main id="main-content">
+-  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/index.html">Home</a></li><li><a href="/services/index.html">Services</a></li><li aria-current="page">Water Heaters</li></ol></nav>
++  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../">Services</a></li><li aria-current="page">Water Heaters</li></ol></nav>
+   <section class="service-page-hero"><div class="service-page-hero-text">
+     <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg> Reliable Hot Water</div>
+     <h1>Water Heater Services</h1>
+     <p>Installation, repair, and maintenance of tank and tankless water heaters for consistent, energy-efficient hot water supply.</p>
+-    <div class="hero-btns"><a href="/contact/index.html" class="btn-primary">Book a Free Assessment</a><a href="tel:+254721342738" class="btn-outline">Call +254 721 342 738</a></div>
++    <div class="hero-btns"><a href="../../contact/" class="btn-primary">Book a Free Assessment</a><a href="tel:+254721342738" class="btn-outline">Call +254 721 342 738</a></div>
+   </div></section>
+   <section class="service-detail-section">
+     <div class="section-label"><span>What We Do</span></div>
+@@ -54,9 +58,9 @@
+     <div class="service-card" data-animate><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/><path d="M12 12v6"/></svg></div><h3>Water Pressure</h3><p>Low pressure to your water heater affects performance — we diagnose and fix pressure issues.</p><a href="/services/water-pressure/" class="service-learn-more">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+     <div class="service-card" data-animate><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h18v18H3zM9 9h6v6H9z"/></svg></div><h3>Bathroom &amp; Kitchen Fitting</h3><p>New shower or bath installation? We'll coordinate the hot water supply as part of your fit-out.</p><a href="/services/bathroom-kitchen-fitting/" class="service-learn-more">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+   </div></section>
+-  <section class="cta-section"><div><h2>Need a Water Heater Installed or Repaired?</h2><p>Book a free assessment today. We'll recommend the right solution for your property and budget.</p></div><a href="/contact/index.html" class="btn-dark">Book a Free Assessment &rarr;</a></section>
++  <section class="cta-section"><div><h2>Need a Water Heater Installed or Repaired?</h2><p>Book a free assessment today. We'll recommend the right solution for your property and budget.</p></div><a href="../../contact/" class="btn-dark">Book a Free Assessment &rarr;</a></section>
+   </main>
+   <a href="https://wa.me/254721342738" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+-  <footer><div class="footer-grid"><div><div class="footer-logo"><img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET</div><p class="footer-copy">Professional plumbing for residential and commercial clients across Kenya. Quality workmanship and 24/7 emergency support.</p></div><div class="footer-links"><h4>Quick Links</h4><a href="/index.html">Home</a><a href="/about/index.html">About Us</a><a href="/services/index.html">Services</a><a href="/gallery.html">Projects</a><a href="/contact/index.html">Contact</a></div><div class="footer-links"><h4>Our Services</h4><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a></div><div class="footer-links"><h4>Contact Info</h4><a href="tel:+254721342738">+254 721 342 738</a><a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a><div class="footer-working-hours"><p><strong>Mon – Sat:</strong> 7:00 AM – 7:00 PM</p><p><strong>Sunday:</strong> 8:00 AM – 5:00 PM</p><p><strong>Emergency:</strong> 24/7 Available</p></div></div></div><div class="footer-bottom"><p>&copy; 2026 Dema Plumbing and Pipe Fitting Eldoret. All rights reserved.</p></div></footer>
++  <footer><div class="footer-grid"><div><div class="footer-logo"><img src="../../images/logo/logo.png" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET</div><p class="footer-copy">Professional plumbing for residential and commercial clients across Kenya. Quality workmanship and 24/7 emergency support.</p></div><div class="footer-links"><h4>Quick Links</h4><a href="../../">Home</a><a href="../../about/">About Us</a><a href="../">Services</a><a href="../../gallery/">Projects</a><a href="../../contact/">Contact</a></div><div class="footer-links"><h4>Our Services</h4><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a></div><div class="footer-links"><h4>Contact Info</h4><a href="tel:+254721342738">+254 721 342 738</a><a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a><div class="footer-working-hours"><p><strong>Mon – Sat:</strong> 7:00 AM – 7:00 PM</p><p><strong>Sunday:</strong> 8:00 AM – 5:00 PM</p><p><strong>Emergency:</strong> 24/7 Available</p></div></div></div><div class="footer-bottom"><p>&copy; 2026 Dema Plumbing and Pipe Fitting Eldoret. All rights reserved.</p></div></footer>
+   <script src="/js/main.js" defer></script>
+ </body></html>
+diff --git a/services/water-pressure/index.html b/services/water-pressure/index.html
+index 278e742..5944af3 100644
+--- a/services/water-pressure/index.html
++++ b/services/water-pressure/index.html
+@@ -13,23 +13,27 @@
+   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+-  <link rel="manifest" href="/manifest.json"><link rel="icon" href="/images/icons/favicon.svg" type="image/svg+xml">
++  <link rel="manifest" href="/manifest.json">
++  <link rel="icon" href="../../images/icons/favicon.ico">
++  <link rel="icon" href="../../images/icons/favicon-32x32.png" sizes="32x32" type="image/png">
++  <link rel="icon" href="../../images/icons/favicon-16x16.png" sizes="16x16" type="image/png">
++  <link rel="apple-touch-icon" href="../../images/icons/apple-touch-icon.png">
+   <link rel="stylesheet" href="/css/styles.css">
+ </head>
+ <body>
+   <a href="#main-content" class="skip-nav">Skip to main content</a>
+   <div class="top-bar"><div class="top-bar-left"><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Eldoret, Kenya</span></div><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+254 721 342 738</span></div><div class="top-bar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon–Sat: 7AM–7PM</span></div></div><div class="top-bar-right"><div class="top-bar-social"><a href="https://facebook.com/demaplumbing" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div></div></div>
+-  <nav><div class="logo"><img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="64" height="64"><div class="logo-text"><span class="logo-dema">DEMA</span><span class="logo-subtitle">Plumbing Enterprise</span></div></div>
+-    <ul class="nav-links"><li><a href="/index.html">Home</a></li><li><a href="/about/index.html">About</a></li><li class="nav-dropdown"><a href="/services/index.html" class="active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown-menu"><a href="/services/index.html">All Services</a><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/" aria-current="page">Water Pressure</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a></div></li><li><a href="/gallery.html">Projects</a></li><li><a href="/contact/index.html">Contact</a></li></ul>
+-    <a href="/contact/index.html" class="nav-cta">Get a Quote</a>
++  <nav><div class="logo"><img src="../../images/logo/logo.png" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="40" height="40">DEMA<span>.</span></div>
++    <ul class="nav-links"><li><a href="../../">Home</a></li><li><a href="../../about/">About</a></li><li class="nav-dropdown"><a href="../" class="active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown-menu"><a href="../">All Services</a><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/" aria-current="page">Water Pressure</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a></div></li><li><a href="../../gallery/">Projects</a></li><li><a href="../../contact/">Contact</a></li></ul>
++    <a href="../../contact/" class="nav-cta">Get a Quote</a>
+   </nav>
+   <main id="main-content">
+-  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/index.html">Home</a></li><li><a href="/services/index.html">Services</a></li><li aria-current="page">Water Pressure</li></ol></nav>
++  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../">Services</a></li><li aria-current="page">Water Pressure</li></ol></nav>
+   <section class="service-page-hero"><div class="service-page-hero-text">
+     <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/><path d="M12 12v6"/></svg> Optimal Water Pressure</div>
+     <h1>Water Pressure Solutions</h1>
+     <p>Low trickle in your shower or dangerously high pressure damaging your fixtures? We diagnose and fix water pressure problems for the right, lasting solution.</p>
+-    <div class="hero-btns"><a href="/contact/index.html" class="btn-primary">Book a Diagnosis</a><a href="tel:+254721342738" class="btn-outline">Call +254 721 342 738</a></div>
++    <div class="hero-btns"><a href="../../contact/" class="btn-primary">Book a Diagnosis</a><a href="tel:+254721342738" class="btn-outline">Call +254 721 342 738</a></div>
+   </div></section>
+   <section class="service-detail-section">
+     <div class="section-label"><span>What We Do</span></div>
+@@ -54,9 +58,9 @@
+     <div class="service-card" data-animate><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>Pipe Installation</h3><p>Undersized or corroded pipes restrict flow — we upgrade your pipe system for full pressure.</p><a href="/services/pipe-installation/" class="service-learn-more">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+     <div class="service-card" data-animate><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg></div><h3>Water Heater Services</h3><p>Pressure issues affect water heater performance — we diagnose and resolve them together.</p><a href="/services/water-heaters/" class="service-learn-more">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+   </div></section>
+-  <section class="cta-section"><div><h2>Tired of Low Water Pressure?</h2><p>Book a professional diagnosis and get your water pressure right — permanently. Transparent quote before any work starts.</p></div><a href="/contact/index.html" class="btn-dark">Book a Diagnosis &rarr;</a></section>
++  <section class="cta-section"><div><h2>Tired of Low Water Pressure?</h2><p>Book a professional diagnosis and get your water pressure right — permanently. Transparent quote before any work starts.</p></div><a href="../../contact/" class="btn-dark">Book a Diagnosis &rarr;</a></section>
+   </main>
+   <a href="https://wa.me/254721342738" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+-  <footer><div class="footer-grid"><div><div class="footer-logo"><img src="/images/logo/logo.svg" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET</div><p class="footer-copy">Professional plumbing for residential and commercial clients across Kenya. Quality workmanship and 24/7 emergency support.</p></div><div class="footer-links"><h4>Quick Links</h4><a href="/index.html">Home</a><a href="/about/index.html">About Us</a><a href="/services/index.html">Services</a><a href="/gallery.html">Projects</a><a href="/contact/index.html">Contact</a></div><div class="footer-links"><h4>Our Services</h4><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a></div><div class="footer-links"><h4>Contact Info</h4><a href="tel:+254721342738">+254 721 342 738</a><a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a><div class="footer-working-hours"><p><strong>Mon – Sat:</strong> 7:00 AM – 7:00 PM</p><p><strong>Sunday:</strong> 8:00 AM – 5:00 PM</p><p><strong>Emergency:</strong> 24/7 Available</p></div></div></div><div class="footer-bottom"><p>&copy; 2026 Dema Plumbing and Pipe Fitting Eldoret. All rights reserved.</p></div></footer>
++  <footer><div class="footer-grid"><div><div class="footer-logo"><img src="../../images/logo/logo.png" alt="Dema Plumbing and Pipe Fitting Eldoret Logo" width="36" height="36">DEMA <span>PLUMBING AND PIPE FITTING</span> ELDORET</div><p class="footer-copy">Professional plumbing for residential and commercial clients across Kenya. Quality workmanship and 24/7 emergency support.</p></div><div class="footer-links"><h4>Quick Links</h4><a href="../../">Home</a><a href="../../about/">About Us</a><a href="../">Services</a><a href="../../gallery/">Projects</a><a href="../../contact/">Contact</a></div><div class="footer-links"><h4>Our Services</h4><a href="/services/leak-detection/">Leak Detection</a><a href="/services/drain-cleaning/">Drain Cleaning</a><a href="/services/pipe-installation/">Pipe Installation</a><a href="/services/emergency-plumbing/">Emergency Plumbing</a><a href="/services/bathroom-kitchen-fitting/">Bathroom &amp; Kitchen</a><a href="/services/water-heaters/">Water Heaters</a><a href="/services/sewage-drainage/">Sewage &amp; Drainage</a><a href="/services/water-pressure/">Water Pressure</a></div><div class="footer-links"><h4>Contact Info</h4><a href="tel:+254721342738">+254 721 342 738</a><a href="mailto:richardomondi19@gmail.com">richardomondi19@gmail.com</a><div class="footer-working-hours"><p><strong>Mon – Sat:</strong> 7:00 AM – 7:00 PM</p><p><strong>Sunday:</strong> 8:00 AM – 5:00 PM</p><p><strong>Emergency:</strong> 24/7 Available</p></div></div></div><div class="footer-bottom"><p>&copy; 2026 Dema Plumbing and Pipe Fitting Eldoret. All rights reserved.</p></div></footer>
+   <script src="/js/main.js" defer></script>
+ </body></html>
+diff --git a/sitemap.xml b/sitemap.xml
+index 0dd1fc9..fa4b454 100644
+--- a/sitemap.xml
++++ b/sitemap.xml
+@@ -56,7 +56,7 @@
+     <priority>0.9</priority>
+   </url>
+   <url>
+-    <loc>https://demaplumbingeld.co.ke/gallery.html</loc>
++    <loc>https://demaplumbingeld.co.ke/gallery/</loc>
+     <changefreq>monthly</changefreq>
+     <priority>0.7</priority>
+   </url>

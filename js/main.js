@@ -282,3 +282,40 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const grid = document.querySelector('.video-grid');
+  if (!grid || typeof window.videosData === 'undefined') return;
+
+  window.videosData.forEach(function (item) {
+    const card = document.createElement('div');
+    card.className = 'video-card';
+    card.innerHTML =
+      '<img src="' + item.poster + '" alt="' + item.title + '" loading="lazy">' +
+      '<video muted loop playsinline preload="none" src="' + item.video + '"></video>' +
+      '<div class="video-card-overlay"><span class="video-card-title">' + item.title + '</span></div>' +
+      '<div class="video-play-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>';
+
+    const video = card.querySelector('video');
+    card.addEventListener('click', function () {
+      const isPlaying = card.classList.contains('playing');
+      document.querySelectorAll('.video-card.playing').forEach(function (c) {
+        if (c !== card) {
+          c.classList.remove('playing');
+          const v = c.querySelector('video');
+          v.pause();
+          v.currentTime = 0;
+        }
+      });
+      if (isPlaying) {
+        card.classList.remove('playing');
+        video.pause();
+      } else {
+        card.classList.add('playing');
+        video.play();
+      }
+    });
+
+    grid.appendChild(card);
+  });
+});

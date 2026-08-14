@@ -237,6 +237,56 @@ window.galleryData = [
     completionDate: "2026-06-05",
     image: "commercial/commercial-rough-in-plumbing-1.webp",
     featured: false
+  },
+  {
+    id: 23,
+    title: "Bathroom Vanity & Mirror Cabinet Installation",
+    description: "Installation of a wall-mounted vanity sink with mirrored storage cabinet and matching toilet as part of a full bathroom fit-out.",
+    category: "bathroom",
+    location: "Elgonview, Eldoret",
+    completionDate: "2026-07-14",
+    image: "bathroom-installations/bathroom-vanity-mirror-cabinet-1.webp",
+    featured: false
+  },
+  {
+    id: 24,
+    title: "Bathroom Vanity & Toilet Installation",
+    description: "Installation of a modern vessel sink vanity and toilet with new PVC supply fittings for a bathroom renovation.",
+    category: "bathroom",
+    location: "Elgonview, Eldoret",
+    completionDate: "2026-07-16",
+    image: "bathroom-installations/bathroom-vanity-toilet-2.webp",
+    featured: false
+  },
+  {
+    id: 25,
+    title: "Rainfall Shower Fixture Installation",
+    description: "Installation of a matte black rainfall shower system with adjustable handheld attachment in a glass-enclosed shower.",
+    category: "bathroom",
+    location: "Elgonview, Eldoret",
+    completionDate: "2026-07-16",
+    image: "bathroom-installations/shower-fixture-install-2.webp",
+    featured: false
+  },
+  {
+    id: 26,
+    title: "Kitchen Sink Faucet Testing",
+    description: "Installation and water-flow testing of a pull-down kitchen faucet with integrated filtration tap on a new kitchen island sink.",
+    category: "kitchen",
+    location: "Elgonview, Eldoret",
+    completionDate: "2026-07-18",
+    image: "kitchen-plumbing/kitchen-sink-faucet-test-1.webp",
+    featured: false
+  },
+  {
+    id: 27,
+    title: "Toilet Installation",
+    description: "Installation of a new toilet with fresh supply line connection as part of a bathroom renovation.",
+    category: "bathroom",
+    location: "Elgonview, Eldoret",
+    completionDate: "2026-07-10",
+    image: "bathroom-installations/toilet-installation-2.webp",
+    featured: false
   }
   // Add more items as needed by copying the structure above
 ];

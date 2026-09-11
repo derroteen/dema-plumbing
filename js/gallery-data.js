@@ -287,6 +287,76 @@ window.galleryData = [
     completionDate: "2026-07-10",
     image: "bathroom-installations/toilet-installation-2.webp",
     featured: false
+  },
+  {
+    id: 28,
+    title: "Smart Sensor Toilet Installation",
+    description: "Installation and inspection of a smart sensor toilet with digital display panel as part of a full bathroom fit-out.",
+    category: "bathroom",
+    location: "Elgonview, Eldoret",
+    completionDate: "2026-09-08",
+    image: "bathroom-installations/smart-toilet-inspection-1.webp",
+    featured: false
+  },
+  {
+    id: 29,
+    title: "Freestanding Bathtub Installation",
+    description: "Installation of a freestanding oval bathtub with concealed plumbing connections for a residential bathroom renovation.",
+    category: "bathroom",
+    location: "Elgonview, Eldoret",
+    completionDate: "2026-09-08",
+    image: "bathroom-installations/freestanding-bathtub-install-1.webp",
+    featured: false
+  },
+  {
+    id: 30,
+    title: "Smart Sensor Toilet Installation",
+    description: "Installation of a smart sensor toilet with digital display, completed and connected in a second ensuite bathroom.",
+    category: "bathroom",
+    location: "Elgonview, Eldoret",
+    completionDate: "2026-09-09",
+    image: "bathroom-installations/smart-toilet-completed-1.webp",
+    featured: false
+  },
+  {
+    id: 31,
+    title: "Smart Sensor Toilet Installation",
+    description: "Completed smart sensor toilet installation with digital display panel in a third ensuite bathroom.",
+    category: "bathroom",
+    location: "Elgonview, Eldoret",
+    completionDate: "2026-09-09",
+    image: "bathroom-installations/smart-toilet-completed-2.webp",
+    featured: false
+  },
+  {
+    id: 32,
+    title: "Rainfall Shower System Installation",
+    description: "Installation of a dual-head rainfall shower system with handheld attachment and thermostatic mixer valve in an ensuite bathroom.",
+    category: "bathroom",
+    location: "Elgonview, Eldoret",
+    completionDate: "2026-09-09",
+    image: "bathroom-installations/rainfall-shower-system-install-1.webp",
+    featured: false
+  },
+  {
+    id: 33,
+    title: "Rainfall Shower System Installation",
+    description: "Installation of a matching dual-head rainfall shower system in a second ensuite bathroom as part of a multi-bathroom villa project.",
+    category: "bathroom",
+    location: "Elgonview, Eldoret",
+    completionDate: "2026-09-09",
+    image: "bathroom-installations/rainfall-shower-system-install-2.webp",
+    featured: false
+  },
+  {
+    id: 34,
+    title: "Bathtub Mixer Tap Installation",
+    description: "Assembly and installation of a floor-mounted chrome bathtub mixer tap during a bathroom renovation.",
+    category: "bathroom",
+    location: "Elgonview, Eldoret",
+    completionDate: "2026-09-08",
+    image: "bathroom-installations/bathtub-mixer-tap-install-1.webp",
+    featured: false
   }
   // Add more items as needed by copying the structure above
 ];

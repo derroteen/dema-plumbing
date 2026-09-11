@@ -21,6 +21,13 @@ window.videosData = [
     location: "Elgonview, Eldoret",
     poster: "images/videos/kitchen-faucet-test-poster.webp",
     video: "videos/kitchen-faucet-test.mp4"
+  },
+  {
+    id: 3,
+    title: "Smart Toilet Installation Check",
+    location: "Elgonview, Eldoret",
+    poster: "images/videos/smart-toilet-install-check-poster.webp",
+    video: "videos/smart-toilet-install-check.mp4"
   }
   // Add more clips as needed by copying the structure above
 ];

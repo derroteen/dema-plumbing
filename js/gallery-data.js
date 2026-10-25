@@ -357,6 +357,57 @@ window.galleryData = [
     completionDate: "2026-09-08",
     image: "bathroom-installations/bathtub-mixer-tap-install-1.webp",
     featured: false
+  },
+  {
+    id: 35,
+    title: "Rooftop Water Tank Plumbing Installation",
+    description: "Installation of green PPR pipework, gate valves and a Dayliff unit connected to a rooftop water storage tank on a steel stand.",
+    category: "pipe",
+    location: "Nairobi",
+    completionDate: "2026-10-20",
+    image: "water-tanks/rooftop-tank-plumbing-installation-1.webp",
+    featured: false
+  },
+  {
+    id: 36,
+    title: "PPR Pipe Welding on Rooftop Tank System",
+    description: "On-site jointing of PPR supply pipes with a fusion welding tool while the rooftop tank connections were being built.",
+    category: "pipe",
+    location: "Nairobi",
+    completionDate: "2026-10-20",
+    image: "water-tanks/ppr-pipe-welding-rooftop-1.webp",
+    featured: false
+  },
+  {
+    id: 37,
+    title: "Rooftop Water Tank Installation",
+    description: "Rooftop water storage tank on a steel platform with PPR pipework and valves routed to the building's supply lines.",
+    category: "pipe",
+    location: "Nairobi",
+    completionDate: "2026-10-21",
+    image: "water-tanks/rooftop-tank-installation-dusk-1.webp",
+    featured: false
+  },
+  {
+    id: 38,
+    title: "PPR Pipe Distribution Manifold",
+    description: "Multi-line PPR manifold assembled along the roof parapet to distribute water from the rooftop tank to separate supply lines.",
+    category: "pipe",
+    location: "Nairobi",
+    completionDate: "2026-10-19",
+    image: "water-tanks/ppr-pipe-manifold-1.webp",
+    featured: false
+  },
+  {
+    id: 39,
+    title: "Rooftop Tank Pipework and Valve Installation",
+    description: "PPR pipe runs and isolation valves fitted between the rooftop tank, the Dayliff unit and the building's downpipes.",
+    category: "pipe",
+    location: "Nairobi",
+    completionDate: "2026-10-19",
+    image: "water-tanks/rooftop-tank-pipework-valves-1.webp",
+    featured: false
   }
   // Add more items as needed by copying the structure above
 ];
+

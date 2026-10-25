@@ -2143,3 +2143,7 @@ nav {
 .video-card.playing .video-play-icon { opacity: 0; pointer-events: none; }
 .video-play-icon svg { width: 20px; height: 20px; color: var(--primary-blue); margin-left: 2px; }
 @media (max-width: 480px) { .video-card { width: 42vw; } }
+
+.footer-credit { margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.8; }
+.footer-credit a { color: inherit; text-decoration: underline; }
+.footer-credit a:hover { opacity: 0.8; }
